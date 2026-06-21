@@ -7,7 +7,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        serif: ['Georgia', 'ui-serif', 'serif']
+        serif: ['Noto Sans Grantha', 'Georgia', 'ui-serif', 'serif']
       }
     }
   },
@@ -16,17 +16,23 @@ export default {
     themes: [
       {
         trattoria: {
-          primary: '#9b2c2c',
-          secondary: '#1f6f5b',
-          accent: '#d69e2e',
-          neutral: '#262626',
-          'base-100': '#fffaf3',
-          'base-200': '#f4eadb',
-          'base-300': '#dfd0bd',
-          info: '#2563eb',
-          success: '#2f855a',
-          warning: '#b7791f',
-          error: '#c53030'
+          primary: '#005867',            // Deep Teal
+          'primary-content': '#ffffff',  // White text for high contrast
+          secondary: '#e4be73',          // Warm Gold
+          'secondary-content': '#1e292d',// Dark slate text for high contrast
+          accent: '#4c7a8c',             // Slate Blue
+          'accent-content': '#ffffff',   // White text
+          neutral: '#1e292d',            // Dark Slate (very dark charcoal-teal)
+          'neutral-content': '#f5f9fc',  // Very light blue-white text
+          'base-100': '#f5f9fc',         // Light base background
+          'base-200': '#dbeaf7',         // Ice Blue background
+          'base-300': '#bed4e7',         // Slightly darker ice blue for borders
+          'base-content': '#1e292d',     // Primary text color
+          brown: '#3a2c29',              // Brown for food photos and accents
+          info: '#1d4ed8',
+          success: '#15803d',
+          warning: '#a16207',
+          error: '#b91c1c'
         }
       }
     ]

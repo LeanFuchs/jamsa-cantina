@@ -4,7 +4,7 @@ import { formatAddress, siteInfo as info, t } from '../lib/content';
 const fullAddress = formatAddress();
 ---
 
-<section class="bg-base-200" id="visit">
+<section class="bg-[#f4eadb]" id="visit">
   <div class="section-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
     <div>
       <p class="eyebrow">{t.location.eyebrow}</p>
@@ -24,7 +24,13 @@ const fullAddress = formatAddress();
             {info.hours.map((hour) => (
               <div class="grid grid-cols-[7rem_1fr] gap-4 text-sm">
                 <dt class="font-medium">{t.days[hour.dayKey]}</dt>
-                <dd>{hour.display}</dd>
+                <dd>
+                  {hour.closed ? (
+                    <span class="text-base-content/60 italic">{t.labels.closed}</span>
+                  ) : (
+                    hour.display
+                  )}
+                </dd>
               </div>
             ))}
           </dl>

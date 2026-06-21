@@ -3,9 +3,18 @@ import { Image } from 'astro:assets';
 import { siteInfo as info, t } from '../lib/content';
 
 const { limit } = Astro.props;
+const imageDimensions = {
+  '/images/hummus.webp': { width: 1456, height: 1600 },
+  '/images/pollo.webp': { width: 1357, height: 1600 },
+  '/images/shakshuka.webp': { width: 1482, height: 1600 },
+  '/images/lehmeyun.webp': { width: 1543, height: 1600 },
+  '/images/pimientos.webp': { width: 1580, height: 1600 },
+  '/images/peras.webp': { width: 1595, height: 1600 }
+};
 const images = info.images.gallery.map((src, index) => ({
   src,
-  alt: t.images.galleryAlt[index]
+  alt: t.images.galleryAlt[index],
+  ...imageDimensions[src]
 }));
 const visibleImages = limit ? images.slice(0, limit) : images;
 ---
@@ -26,9 +35,13 @@ const visibleImages = limit ? images.slice(0, limit) : images;
             class="aspect-[4/3] h-full w-full object-cover transition duration-300 hover:scale-105"
             src={image.src}
             alt={image.alt}
-            width={900}
-            height={675}
+            width={image.width}
+            height={image.height}
+            widths={[400, 700, 900]}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             loading="lazy"
+            format="avif"
+            quality={75}
           />
         </figure>
       ))}

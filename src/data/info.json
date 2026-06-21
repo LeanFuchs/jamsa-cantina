@@ -1,36 +1,36 @@
 {
-  "website": "https://trattoriaroma.com",
-  "menuUrl": "https://example.com/menu",
-  "instagramUrl": "https://instagram.com/trattoriaroma",
-  "phone": "+1-555-000-0000",
-  "phoneDisplay": "(555) 000-0000",
+  "website": "https://jamsacantina.com.ar",
+  "menuUrl": "https://menu.fu.do/jamsa/qr-menu",
+  "instagramUrl": "https://www.instagram.com/jamsacantina",
+  "phone": "+5491159436117",
+  "phoneDisplay": "11-5943-6117",
   "address": {
-    "street": "123 Main St",
-    "city": "Austin",
-    "region": "TX",
-    "postalCode": "78701",
-    "country": "US"
+    "street": "Soler 4201",
+    "city": "Ciudad Autónoma de Buenos Aires",
+    "region": "C",
+    "postalCode": "C1425",
+    "country": "AR"
   },
-  "mapUrl": "https://www.google.com/maps/search/?api=1&query=123%20Main%20St%2C%20Austin%2C%20TX%2078701",
-  "mapEmbedUrl": "https://www.google.com/maps?q=123%20Main%20St%2C%20Austin%2C%20TX%2078701&output=embed",
+  "mapUrl": "https://www.google.com/maps/place/Jamsa+Cantina/@-34.5899625,-58.4228687,17z/data=!3m1!4b1!4m6!3m5!1s0x95bccbd4bb108a5d:0xf8d17a830018798f!8m2!3d-34.5899669!4d-58.4202938!16s%2Fg%2F11z7tc7rkp?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D",
+  "mapEmbedUrl": "https://www.google.com/maps?q=Soler%204201%2C%20Ciudad%20Autónoma%20de%20Buenos%20Aires%2C%20AR&output=embed",
   "hours": [
-    { "dayKey": "monday", "display": "12:00 PM - 10:00 PM", "opens": "12:00", "closes": "22:00" },
-    { "dayKey": "tuesday", "display": "12:00 PM - 10:00 PM", "opens": "12:00", "closes": "22:00" },
-    { "dayKey": "wednesday", "display": "12:00 PM - 10:00 PM", "opens": "12:00", "closes": "22:00" },
-    { "dayKey": "thursday", "display": "12:00 PM - 10:00 PM", "opens": "12:00", "closes": "22:00" },
-    { "dayKey": "friday", "display": "12:00 PM - 11:00 PM", "opens": "12:00", "closes": "23:00" },
-    { "dayKey": "saturday", "display": "12:00 PM - 11:00 PM", "opens": "12:00", "closes": "23:00" },
-    { "dayKey": "sunday", "display": "1:00 PM - 9:00 PM", "opens": "13:00", "closes": "21:00" }
+    { "dayKey": "monday", "closed": true, "display": "Cerrado", "intervals": [] },
+    { "dayKey": "tuesday", "closed": false, "display": "7:00 PM - 12:00 AM", "intervals": [{ "opens": "19:00", "closes": "00:00" }] },
+    { "dayKey": "wednesday", "closed": false, "display": "7:00 PM - 12:00 AM", "intervals": [{ "opens": "19:00", "closes": "00:00" }] },
+    { "dayKey": "thursday", "closed": false, "display": "7:00 PM - 12:00 AM", "intervals": [{ "opens": "19:00", "closes": "00:00" }] },
+    { "dayKey": "friday", "closed": false, "display": "7:00 PM - 12:00 AM", "intervals": [{ "opens": "19:00", "closes": "00:00" }] },
+    { "dayKey": "saturday", "closed": false, "display": "12:00 PM - 4:00 PM y 8:00 PM - 12:00 AM", "intervals": [{ "opens": "12:00", "closes": "16:00" }, { "opens": "20:00", "closes": "00:00" }] },
+    { "dayKey": "sunday", "closed": false, "display": "12:00 PM - 4:00 PM y 8:00 PM - 12:00 AM", "intervals": [{ "opens": "12:00", "closes": "16:00" }, { "opens": "20:00", "closes": "00:00" }] }
   ],
   "images": {
     "hero": "/images/hero.jpg",
     "gallery": [
-      "/images/gallery-pasta.jpg",
-      "/images/gallery-pizza.jpg",
-      "/images/gallery-kitchen.jpg",
-      "/images/gallery-dining.jpg",
-      "/images/gallery-margherita.jpg",
-      "/images/gallery-dessert.jpg"
+      "/images/hummus.webp",
+      "/images/pollo.webp",
+      "/images/shakshuka.webp",
+      "/images/lehmeyun.webp",
+      "/images/pimientos.webp",
+      "/images/peras.webp"
     ]
   }
 }
