@@ -1,0 +1,24 @@
+---
+import { formatAddress, siteInfo as info, t } from '../lib/content';
+
+const fullAddress = formatAddress();
+---
+
+<footer class="border-t border-base-300 bg-neutral text-neutral-content">
+  <div class="section-shell grid gap-8 py-10 md:grid-cols-[1.2fr_1fr_1fr]">
+    <div>
+      <p class="text-xl font-bold">{t.business.name}</p>
+      <p class="mt-3 max-w-md text-sm opacity-80">{t.business.description}</p>
+    </div>
+    <address class="not-italic">
+      <p class="font-semibold">{t.labels.visit}</p>
+      <a class="mt-3 block text-sm opacity-80 hover:opacity-100" href={info.mapUrl} target="_blank" rel="noreferrer">{fullAddress}</a>
+      <a class="mt-2 block text-sm opacity-80 hover:opacity-100" href={`tel:${info.phone}`}>{info.phoneDisplay}</a>
+    </address>
+    <div>
+      <p class="font-semibold">{t.labels.links}</p>
+      <a class="mt-3 block text-sm opacity-80 hover:opacity-100" href={info.menuUrl} target="_blank" rel="noreferrer">{t.cta.menu}</a>
+      <a class="mt-2 block text-sm opacity-80 hover:opacity-100" href={info.instagramUrl} target="_blank" rel="noreferrer">{t.cta.instagram}</a>
+    </div>
+  </div>
+</footer>

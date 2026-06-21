@@ -1,0 +1,17 @@
+{
+  "name": "restaurant-name",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.5",
+    "astro": "^5.13.5",
+    "daisyui": "^4.12.24",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {}
+}

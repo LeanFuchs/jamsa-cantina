@@ -1,0 +1,36 @@
+{
+  "website": "https://trattoriaroma.com",
+  "menuUrl": "https://example.com/menu",
+  "instagramUrl": "https://instagram.com/trattoriaroma",
+  "phone": "+1-555-000-0000",
+  "phoneDisplay": "(555) 000-0000",
+  "address": {
+    "street": "123 Main St",
+    "city": "Austin",
+    "region": "TX",
+    "postalCode": "78701",
+    "country": "US"
+  },
+  "mapUrl": "https://www.google.com/maps/search/?api=1&query=123%20Main%20St%2C%20Austin%2C%20TX%2078701",
+  "mapEmbedUrl": "https://www.google.com/maps?q=123%20Main%20St%2C%20Austin%2C%20TX%2078701&output=embed",
+  "hours": [
+    { "dayKey": "monday", "display": "12:00 PM - 10:00 PM", "opens": "12:00", "closes": "22:00" },
+    { "dayKey": "tuesday", "display": "12:00 PM - 10:00 PM", "opens": "12:00", "closes": "22:00" },
+    { "dayKey": "wednesday", "display": "12:00 PM - 10:00 PM", "opens": "12:00", "closes": "22:00" },
+    { "dayKey": "thursday", "display": "12:00 PM - 10:00 PM", "opens": "12:00", "closes": "22:00" },
+    { "dayKey": "friday", "display": "12:00 PM - 11:00 PM", "opens": "12:00", "closes": "23:00" },
+    { "dayKey": "saturday", "display": "12:00 PM - 11:00 PM", "opens": "12:00", "closes": "23:00" },
+    { "dayKey": "sunday", "display": "1:00 PM - 9:00 PM", "opens": "13:00", "closes": "21:00" }
+  ],
+  "images": {
+    "hero": "/images/hero.jpg",
+    "gallery": [
+      "/images/gallery-pasta.jpg",
+      "/images/gallery-pizza.jpg",
+      "/images/gallery-kitchen.jpg",
+      "/images/gallery-dining.jpg",
+      "/images/gallery-margherita.jpg",
+      "/images/gallery-dessert.jpg"
+    ]
+  }
+}

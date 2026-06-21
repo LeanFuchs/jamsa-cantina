@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Gallery from '../components/Gallery.astro';
+import { interpolate, t } from '../lib/content';
+---
+
+<BaseLayout
+  title={interpolate(t.meta.galleryTitle)}
+  description={interpolate(t.meta.galleryDescription)}
+>
+  <section class="bg-base-200">
+    <div class="section-shell">
+      <p class="eyebrow">{t.gallery.eyebrow}</p>
+      <h1 class="mt-3 max-w-3xl font-serif text-5xl font-bold leading-tight text-neutral">{t.gallery.pageHeading}</h1>
+      <p class="mt-5 max-w-2xl text-lg leading-8">{t.gallery.intro}</p>
+    </div>
+  </section>
+  <Gallery />
+</BaseLayout>

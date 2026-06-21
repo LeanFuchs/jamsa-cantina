@@ -1,0 +1,33 @@
+---
+import { siteInfo as info, t } from '../lib/content';
+
+const openingHoursSpecification = info.hours.map((hour) => ({
+  '@type': 'OpeningHoursSpecification',
+  dayOfWeek: t.days[hour.dayKey],
+  opens: hour.opens,
+  closes: hour.closes
+}));
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Restaurant',
+  name: t.business.name,
+  image: new URL(info.images.hero, info.website).toString(),
+  url: info.website,
+  telephone: info.phone,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: info.address.street,
+    addressLocality: info.address.city,
+    addressRegion: info.address.region,
+    postalCode: info.address.postalCode,
+    addressCountry: info.address.country
+  },
+  openingHoursSpecification,
+  servesCuisine: t.business.servesCuisine,
+  menu: info.menuUrl,
+  sameAs: [info.instagramUrl]
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

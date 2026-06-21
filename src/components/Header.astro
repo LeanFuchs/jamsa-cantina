@@ -1,0 +1,28 @@
+---
+import { siteInfo as info, t } from '../lib/content';
+
+const links = [
+  { href: '/', label: t.nav.home },
+  { href: '/about', label: t.nav.about },
+  { href: '/gallery', label: t.nav.gallery },
+  { href: '/contact', label: t.nav.contact }
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-base-300 bg-base-100/95 backdrop-blur">
+  <nav class="navbar mx-auto max-w-6xl px-4 sm:px-6 lg:px-8" aria-label="Primary navigation">
+    <div class="navbar-start">
+      <a class="text-lg font-bold text-neutral" href="/">{t.business.name}</a>
+    </div>
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        {links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+      </ul>
+    </div>
+    <div class="navbar-end gap-2">
+      <a class="btn btn-ghost hidden md:inline-flex" href={info.instagramUrl} target="_blank" rel="noreferrer">{t.cta.instagram}</a>
+      <a class="btn btn-ghost hidden sm:inline-flex" href={info.menuUrl} target="_blank" rel="noreferrer">{t.cta.menu}</a>
+      <a class="btn btn-primary" href={info.mapUrl} target="_blank" rel="noreferrer">{t.cta.directions}</a>
+    </div>
+  </nav>
+</header>

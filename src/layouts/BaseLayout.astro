@@ -1,0 +1,35 @@
+---
+import '../styles.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { interpolate, siteInfo as info, t } from '../lib/content';
+
+const {
+  title = interpolate(t.meta.defaultTitle),
+  description = t.business.description
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" data-theme="trattoria">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, info.website)} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={new URL(info.images.hero, info.website)} />
+    <JsonLd />
+  </head>
+  <body class="min-h-screen bg-base-100 text-base-content">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

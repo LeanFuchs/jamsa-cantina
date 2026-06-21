@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LocationCard from '../components/LocationCard.astro';
+import { interpolate, siteInfo as info, t } from '../lib/content';
+---
+
+<BaseLayout
+  title={interpolate(t.meta.contactTitle)}
+  description={interpolate(t.meta.contactDescription)}
+>
+  <section class="bg-base-100">
+    <div class="section-shell">
+      <p class="eyebrow">{t.contact.eyebrow}</p>
+      <h1 class="mt-3 max-w-3xl font-serif text-5xl font-bold leading-tight text-neutral">{t.contact.heading}</h1>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href={info.mapUrl} target="_blank" rel="noreferrer">{t.cta.directions}</a>
+        <a class="btn btn-secondary" href={info.menuUrl} target="_blank" rel="noreferrer">{t.cta.menu}</a>
+        <a class="btn btn-outline" href={`tel:${info.phone}`}>{info.phoneDisplay}</a>
+      </div>
+    </div>
+  </section>
+  <LocationCard />
+</BaseLayout>
