@@ -1,6 +1,5 @@
 /* Self-hosted fonts — no external network requests or preconnects needed */
 @import '@fontsource-variable/inter';
-@import '@fontsource/noto-sans-grantha';
 
 @tailwind base;
 @tailwind components;

@@ -8,12 +8,15 @@ import { interpolate, t } from '../lib/content';
   title={interpolate(t.meta.galleryTitle)}
   description={interpolate(t.meta.galleryDescription)}
 >
-  <section class="bg-[#f4eadb]">
-    <div class="section-shell">
-      <p class="eyebrow">{t.gallery.eyebrow}</p>
-      <h1 class="mt-3 max-w-3xl font-serif text-5xl font-bold leading-tight text-neutral">{t.gallery.pageHeading}</h1>
-      <p class="mt-5 max-w-2xl text-lg leading-8">{t.gallery.intro}</p>
+  <section class="relative bg-[#f4eadb] py-16 md:py-24 overflow-hidden border-b border-neutral/5">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+    <div class="section-shell relative max-w-4xl mx-auto flex flex-col items-stretch lg:items-center">
+      <p class="eyebrow uppercase tracking-widest text-xs font-bold text-[#005a66] text-left lg:w-full lg:max-w-3xl">{t.gallery.eyebrow}</p>
+      
+      <h1 class="mt-4 font-serif text-4xl font-bold leading-tight text-neutral sm:text-5xl lg:text-6xl text-left lg:text-center max-w-3xl lg:mx-auto">{t.gallery.pageHeading}</h1>
+      
+      {t.gallery.intro && <p class="mt-4 max-w-2xl text-base sm:text-lg text-neutral/80 leading-relaxed text-left lg:text-center lg:mx-auto">{t.gallery.intro}</p>}
     </div>
   </section>
-  <Gallery />
+  <Gallery variant="full" />
 </BaseLayout>

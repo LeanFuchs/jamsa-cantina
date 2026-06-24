@@ -1,5 +1,8 @@
 ---
 import { siteInfo as info, t } from '../lib/content';
+// 1. Updated extension to match your logo.jpg
+import logo from '../assets/logo.png'; 
+import { Image } from 'astro:assets';
 
 const links = [
   { href: '/', label: t.nav.home },
@@ -8,21 +11,92 @@ const links = [
   { href: '/contact', label: t.nav.contact }
 ];
 ---
-
 <header class="sticky top-0 z-50 border-b border-base-300 bg-base-100/95 backdrop-blur">
-  <nav class="navbar mx-auto max-w-6xl px-4 sm:px-6 lg:px-8" aria-label="Primary navigation">
+  <nav
+    class="navbar mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"
+    aria-label="Primary navigation"
+  >
     <div class="navbar-start">
-      <a class="text-lg font-bold text-neutral" href="/">{t.business.name}</a>
+      <div class="dropdown lg:hidden">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </label>
+
+        <ul
+          tabindex="0"
+          class="menu dropdown-content z-[100] mt-3 w-56 rounded-box bg-base-100 p-2 shadow"
+        >
+          {links.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <a href="/" class="flex items-center gap-3">
+        {/* 2. Changed src="logo" to src={logo} */}
+        <Image
+          src={logo}
+          alt={t.business.name}
+          class="h-14 w-auto"
+        />
+        <span class="text-lg font-medium text-neutral">
+          {t.business.name}
+        </span>
+      </a>
     </div>
+
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
-        {links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+        {links.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))}
       </ul>
     </div>
+
     <div class="navbar-end gap-2">
-      <a class="btn btn-ghost hidden md:inline-flex" href={info.instagramUrl} target="_blank" rel="noreferrer">{t.cta.instagram}</a>
-      <a class="btn btn-ghost hidden sm:inline-flex" href={info.menuUrl} target="_blank" rel="noreferrer">{t.cta.menu}</a>
-      <a class="btn btn-primary" href={info.mapUrl} target="_blank" rel="noreferrer">{t.cta.directions}</a>
+      <a
+        class="btn btn-ghost hidden md:inline-flex"
+        href={info.instagramUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {t.cta.instagram}
+      </a>
+
+      <a
+        class="btn btn-ghost hidden sm:inline-flex"
+        href={info.menuUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {t.cta.menu}
+      </a>
+
+      <a
+        class="btn btn-primary"
+        href={info.mapUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {t.cta.directions}
+      </a>
     </div>
   </nav>
 </header>

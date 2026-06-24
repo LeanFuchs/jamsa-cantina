@@ -44,15 +44,34 @@ export default {
     sunday: 'Domingo'
   },
   images: {
-    heroAlt: 'Warm restaurant dining room with tables set for dinner',
+    heroAlt: 'Entrada de Jamsa Cantina de noche, con el cartel iluminado sobre el toldo y el comedor a la vista',
+    // Order matches info.json -> images.gallery (assetMap keys in Gallery.astro).
+    // Update both arrays together if you reorder or add/remove gallery photos.
     galleryAlt: [
-      'Fresh pasta with tomato sauce and herbs',
-      'Wood-fired pizza with basil',
-      'Chef finishing a pasta dish in the kitchen',
-      'Guests dining inside a neighborhood restaurant',
-      'Margherita pizza served hot',
-      'Tiramisu dessert dusted with cocoa'
+      'Lehmeyún horneado con tahini y cebolla morada',
+      'Berenjenas asadas con granada y hierbas frescas',
+      'Hummus cremoso con garbanzos especiados y pimentón',
+      'Pollo al horno de leña con salsa de mostaza y verduras',
+      'Albóndigas en salsa con crema de hierbas',
+      'Tabule fresco con granada',
+      'Latkes crocantes con puré de manzana y crema',
+      'Osobuco braseado con verduras y crema de limón',
+      'Pimientos asados rellenos de arroz y carne',
+      'Fatush con pan crocante y sumac',
+      'Malabi con almíbar de rosas, coco y pistacho',
+      'Peras escalfadas con crema especiada',
+      'Lehmeyún visto de cerca sobre la mesa',
+      'Platitos para compartir en la mesa de Jamsa',
+      'Platitos para compartir en la mesa de Jamsa',
+      'Platitos para compartir en la mesa de Jamsa',
+      'Platitos para compartir en la mesa de Jamsa'
     ]
+  },
+  nav: {
+    home: 'La Cantina',
+    about: 'Nosotros',
+    gallery: 'Galería',
+    contact: 'Contacto'
   },
  meta: {
   defaultTitle: '{name} - Cocina de Jerusalén en {cityState}',
@@ -87,9 +106,7 @@ export default {
   gallery: {
     eyebrow: 'Galería',
     heading: 'Nuestros platos',
-    pageHeading: 'Postales de nuestra cocina y el encuentro alrededor de la mesa',
-    intro:
-      'Replace these sample photos with real Instagram images from the restaurant before launch. Keep the gallery focused: 6 to 12 strong food and ambiance photos is enough.'
+    pageHeading: 'Postales de nuestra cocina y el encuentro alrededor de la mesa'
   },
   location: {
     eyebrow: 'Ubicación y Horarios',
@@ -129,7 +146,7 @@ export default {
   },
   contact: {
     eyebrow: 'Contacto',
-    heading: 'Dirección y horarios'
+    heading: 'Reservas, dirección y horarios'
   },
 llms: {
   title: '# {name}',

@@ -24,13 +24,24 @@
   ],
   "images": {
     "hero": "/images/hero.jpg",
-    "gallery": [
-      "/images/hummus.webp",
-      "/images/pollo.webp",
-      "/images/shakshuka.webp",
-      "/images/lehmeyun.webp",
-      "/images/pimientos.webp",
-      "/images/peras.webp"
+  "gallery": [
+      "lehmeyun",
+      "berenjenas",
+      "hummusVeggie",
+      "pollo",
+      "albondigas",
+      "tabule",
+      "latkes",
+      "osobuco",
+      "pimientos",
+      "fatush",
+      "malabi",
+      "peras",
+      "lehmeyunEspejo",
+      "platitos1",
+      "platitos2",
+      "platitos3",
+      "platitos4"
     ]
   }
 }

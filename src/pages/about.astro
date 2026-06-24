@@ -7,36 +7,47 @@ import { interpolate, siteInfo as info, t } from '../lib/content';
   title={interpolate(t.meta.aboutTitle)}
   description={interpolate(t.meta.aboutDescription)}
 >
-  <section class="bg-[#f4eadb]">
-    <div class="section-shell">
-      <p class="eyebrow">{t.about.eyebrow}</p>
-      <h1 class="mt-3 max-w-3xl font-serif text-5xl font-bold leading-tight text-neutral">{t.about.heading}</h1>
+  <section class="relative bg-[#f4eadb] py-16 md:py-24 overflow-hidden border-b border-neutral/5">
+    <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+    <div class="section-shell relative max-w-4xl mx-auto flex flex-col items-stretch lg:items-center">
+      <p class="eyebrow uppercase tracking-widest text-xs font-bold text-[#005a66] text-left lg:w-full lg:max-w-3xl">{t.about.eyebrow}</p>
+      
+      <h1 class="mt-4 font-serif text-4xl font-bold leading-tight text-neutral sm:text-5xl lg:text-6xl text-left lg:text-center max-w-3xl lg:mx-auto">{t.about.heading}</h1>
     </div>
   </section>
 
-  <section class="bg-base-100">
-    <div class="section-shell grid gap-10 lg:grid-cols-[1fr_0.8fr]">
-      <div class="space-y-6 text-lg leading-8">
+  <section class="bg-base-100 py-16 md:py-24">
+    <div class="section-shell grid gap-12 lg:grid-cols-[1.3fr_0.7fr] items-start">
+      
+      <div class="space-y-6 text-lg leading-8 text-base-content/90">
+        <h2 class="font-serif text-3xl font-bold text-neutral mb-6">Nuestra Historia</h2>
+        
         {t.about.paragraphs.map((paragraph) => <p>{interpolate(paragraph)}</p>)}
       </div>
-      <aside class="rounded-lg border border-base-300 bg-base-200 p-6">
-        <h2 class="text-xl font-bold text-neutral">{t.labels.quickFacts}</h2>
-        <dl class="mt-5 space-y-4">
-          <div>
-            <dt class="text-sm font-semibold uppercase text-secondary">{t.labels.cuisine}</dt>
-            <dd>{t.business.servesCuisine}</dd>
-          </div>
-          <div>
-            <dt class="text-sm font-semibold uppercase text-secondary">{t.labels.neighborhood}</dt>
-            <dd>{t.business.neighborhood}</dd>
-          </div>
-          <div>
-            <dt class="text-sm font-semibold uppercase text-secondary">{t.labels.atmosphere}</dt>
-            <dd>{t.business.atmosphere}</dd>
-          </div>
-        </dl>
-        <a class="btn btn-primary mt-6" href={info.mapUrl} target="_blank" rel="noreferrer">{t.cta.directions}</a>
+      
+      <aside class="rounded-2xl border border-neutral/10 bg-base-200/50 p-6 sm:p-8 shadow-sm">
+        <h2 class="font-serif text-2xl font-bold text-neutral">Platos Emblemáticos</h2>
+        <p class="text-sm text-base-content/70 mt-1">Algunas de las especialidades de nuestro horno de leña y cocina:</p>
+        
+        <ul class="mt-6 space-y-3">
+          {t.business.specialties.map((specialty) => (
+            <li class="flex items-center gap-3 text-sm font-medium text-neutral">
+              <span class="flex h-2 w-2 shrink-0 rounded-full bg-[#005a66]"></span>
+              {specialty}
+            </li>
+          ))}
+        </ul>
+
+        <div class="mt-8 pt-6 border-t border-base-300/60 flex flex-col sm:flex-row lg:flex-col gap-3 items-center w-full">
+          <a class="btn btn-primary w-full sm:w-1/2 lg:w-full justify-center text-center" href={info.mapUrl} target="_blank" rel="noreferrer">
+            {t.cta.directions}
+          </a>
+          <a class="btn btn-ghost border-base-300 w-full sm:w-1/2 lg:w-full justify-center text-center" href={info.menuUrl} target="_blank" rel="noreferrer">
+            Ver Menú Completo
+          </a>
+        </div>
       </aside>
+
     </div>
   </section>
 </BaseLayout>

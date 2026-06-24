@@ -1,31 +1,58 @@
 ---
 import { Image } from 'astro:assets';
 import { siteInfo as info, t } from '../lib/content';
+import hero from '../assets/hero.webp';
+
+// Strip the plus sign to make a valid WhatsApp API link
+const whatsappUrl = `https://wa.me/${info.phone.replace('+', '')}`;
 ---
 
 <section class="relative lg:min-h-[calc(100vh-4rem)] overflow-hidden">
   <Image
-    class="absolute inset-0 h-full w-full object-cover"
-    src={info.images.hero}
-    alt={t.images.heroAlt}
-    width={1800}
-    height={1200}
+    class="absolute inset-0 h-full w-full object-cover object-[center_32%]"
+    src={hero}
+    alt={t.images.heroAlt || 'Jamsa Cantina restaurant interior'}
+    widths={[640, 1000, 1500, 2000]}
+    sizes="100vw"
     loading="eager"
     fetchpriority="high"
-    format="avif"
-    quality={80}
+    format="webp"
+    quality={82}
   />
   <div class="absolute inset-0 bg-neutral/55"></div>
   <div class="relative mx-auto flex min-h-[calc(100vh-4rem)] max-w-6xl items-center px-4 py-20 sm:px-6 lg:px-8">
     <div class="max-w-2xl text-base-100">
-      <p class="mb-2 text-sm font-semibold uppercase tracking-wide text-accent">{t.business.neighborhood}</p>
+      <p class="mb-2 text-sm font-semibold uppercase tracking-wide text-base-300">{t.business.neighborhood}</p>
       <h1 class="font-serif text-5xl font-bold leading-tight sm:text-6xl lg:text-7xl">{t.business.name}</h1>
       <p class="mt-5 max-w-xl text-lg leading-8 text-base-100/90 sm:text-xl">{t.business.tagline}</p>
-      <div class="mt-8 flex flex-wrap gap-3">
-        <a class="btn btn-primary btn-lg w-[150px]" href={info.mapUrl} target="_blank" rel="noreferrer">{t.cta.directions}</a>
-        <a class="btn btn-outline btn-lg w-[150px] border-base-100 text-base-100 hover:border-base-100 hover:bg-base-100 hover:text-neutral" href={info.menuUrl} target="_blank" rel="noreferrer">{t.cta.menu}</a>
+      
+      <!-- Streamlined Action Buttons -->
+      <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
+        <!-- Primary Focus: WhatsApp Reservations -->
+        <a class="btn btn-primary btn-lg px-8 shadow-lg" href={whatsappUrl} target="_blank" rel="noreferrer">
+          Reservas por WhatsApp
+        </a>
+        
+        <!-- Secondary Focus: Menu -->
+        <a class="btn btn-outline btn-lg px-8 border-base-100 text-base-100 hover:border-base-100 hover:bg-base-100 hover:text-neutral" href={info.menuUrl} target="_blank" rel="noreferrer">
+          {t.cta.menu}
+        </a>
       </div>
-      <a class="mt-5 inline-flex text-sm font-semibold text-base-100 underline decoration-accent decoration-2 underline-offset-4 hover:text-accent" href={info.instagramUrl} target="_blank" rel="noreferrer">{t.cta.followInstagram}</a>
+
+      <!-- Secondary Utility Link: Address & Map -->
+      <div class="mt-5">
+        <a class="inline-flex items-center gap-2 text-sm font-medium text-base-100/80 hover:text-base-100 hover:underline transition-colors" href={info.mapUrl} target="_blank" rel="noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 text-primary">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+          </svg>
+          {info.address.street}, {t.business.neighborhood}
+        </a>
+      </div>
+      
+      <div class="mt-4">
+        <a class="inline-flex text-sm font-semibold text-base-100 underline decoration-accent decoration-2 underline-offset-4 hover:text-accent" href={info.instagramUrl} target="_blank" rel="noreferrer">{t.cta.followInstagram}</a>
+      </div>
     </div>
   </div>
 </section>
