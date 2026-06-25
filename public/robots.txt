@@ -2,5 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jamsacantina.com/sitemap-index.xml
-Link: <https://jamsacantina.com/llms.txt>; rel="llms-txt"
+Sitemap: https://jamsa-cantina.pages.dev/sitemap-index.xml

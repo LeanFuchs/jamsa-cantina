@@ -2,7 +2,7 @@
 import es from '../locales/es.js';
 
 export const siteInfo = {
-  website: 'https://jamsacantina.com',
+  website: 'https://jamsa-cantina.pages.dev',
   phoneDisplay: '11-5943-6117',
   instagramUrl: 'https://www.instagram.com/jamsacantina',
   mapUrl: 'https://www.google.com/maps/place/Jamsa+Cantina/@-34.5899625,-58.4228687,17z/data=!3m1!4b1!4m6!3m5!1s0x95bccbd4bb108a5d:0xf8d17a830018798f!8m2!3d-34.5899669!4d-58.4202938!16s%2Fg%2F11z7tc7rkp?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D',

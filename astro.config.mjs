@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   integrations: [tailwind(), sitemap()],
-  site: 'https://jamsacantina.com',
+  site: 'https://jamsa-cantina.pages.dev',
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],

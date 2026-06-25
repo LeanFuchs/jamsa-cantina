@@ -16,7 +16,7 @@ const { t, currentLang, title, description } = Astro.props;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={new URL(Astro.url.pathname, info.website).href} />
-    
+    <link rel="llms-txt" href="/llms.txt" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
