@@ -1,0 +1,6 @@
+# public/robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://jamsacantina.com/sitemap-index.xml
+Link: <https://jamsacantina.com/llms.txt>; rel="llms-txt"

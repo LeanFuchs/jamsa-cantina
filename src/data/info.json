@@ -1,5 +1,5 @@
 {
-  "website": "https://jamsacantina.com.ar",
+  "website": "https://jamsacantina.com",
   "menuUrl": "https://menu.fu.do/jamsa/qr-menu",
   "instagramUrl": "https://www.instagram.com/jamsacantina",
   "phone": "+5491159436117",
@@ -25,14 +25,14 @@
   "images": {
     "hero": "/images/hero.jpg",
   "gallery": [
-      "lehmeyun",
-      "berenjenas",
-      "hummusVeggie",
-      "pollo",
       "albondigas",
-      "tabule",
-      "latkes",
+      "berenjenas",
       "osobuco",
+      "pollo",
+      "latkes",
+      "tabule",
+      "lehmeyun",
+      "hummusVeggie",
       "pimientos",
       "fatush",
       "malabi",

@@ -1,12 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { interpolate, siteInfo as info, t } from '../lib/content';
+import { interpolate, siteInfo as info } from '../lib/content';
+const { t } = Astro.props;
 ---
 
-<BaseLayout
-  title={interpolate(t.meta.aboutTitle)}
-  description={interpolate(t.meta.aboutDescription)}
->
   <section class="relative bg-[#f4eadb] py-16 md:py-24 overflow-hidden border-b border-neutral/5">
     <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:24px_24px]"></div>
     <div class="section-shell relative max-w-4xl mx-auto flex flex-col items-stretch lg:items-center">
@@ -20,13 +17,13 @@ import { interpolate, siteInfo as info, t } from '../lib/content';
     <div class="section-shell grid gap-12 lg:grid-cols-[1.3fr_0.7fr] items-start">
       
       <div class="space-y-6 text-lg leading-8 text-base-content/90">
-        <h2 class="font-serif text-3xl font-bold text-neutral mb-6">Nuestra Historia</h2>
+        <h2 class="font-serif text-3xl font-bold text-neutral mb-6">{t.about.ourHistory}</h2>
         
         {t.about.paragraphs.map((paragraph) => <p>{interpolate(paragraph)}</p>)}
       </div>
       
       <aside class="rounded-2xl border border-neutral/10 bg-base-200/50 p-6 sm:p-8 shadow-sm">
-        <h2 class="font-serif text-2xl font-bold text-neutral">Platos Emblemáticos</h2>
+        <h2 class="font-serif text-2xl font-bold text-neutral">{t.about.specialtiesLabel}</h2>
         <p class="text-sm text-base-content/70 mt-1">Algunas de las especialidades de nuestro horno de leña y cocina:</p>
         
         <ul class="mt-6 space-y-3">
@@ -50,4 +47,3 @@ import { interpolate, siteInfo as info, t } from '../lib/content';
 
     </div>
   </section>
-</BaseLayout>

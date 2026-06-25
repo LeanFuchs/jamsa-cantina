@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GalleryContent from '../../components/GalleryContent.astro';
+import en from '../../locales/en.js';
+import { interpolate } from '../../lib/content';
+const t = en;
+const currentLang = 'en';
+---
+
+<BaseLayout
+  title={interpolate(en.meta.galleryTitle, en)}
+  description={interpolate(en.meta.galleryDescription, en)}
+  t={t} 
+  currentLang={currentLang}
+>
+  <GalleryContent t={en} />
+</BaseLayout>

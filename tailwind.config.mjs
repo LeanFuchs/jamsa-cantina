@@ -15,7 +15,7 @@ export default {
   daisyui: {
     themes: [
       {
-        trattoria: {
+        jamsa: {
           // --- Palette sourced from "Croma" swatch sheet ---
           // Every pairing below has been checked against WCAG AA
           // (4.5:1 for normal text). See contrast notes per color.

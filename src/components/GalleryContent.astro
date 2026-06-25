@@ -1,13 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Gallery from '../components/Gallery.astro';
-import { interpolate, t } from '../lib/content';
+import { interpolate } from '../lib/content';
+const { t } = Astro.props;
 ---
 
-<BaseLayout
-  title={interpolate(t.meta.galleryTitle)}
-  description={interpolate(t.meta.galleryDescription)}
->
   <section class="relative bg-[#f4eadb] py-16 md:py-24 overflow-hidden border-b border-neutral/5">
     <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:24px_24px]"></div>
     <div class="section-shell relative max-w-4xl mx-auto flex flex-col items-stretch lg:items-center">
@@ -18,5 +15,4 @@ import { interpolate, t } from '../lib/content';
       {t.gallery.intro && <p class="mt-4 max-w-2xl text-base sm:text-lg text-neutral/80 leading-relaxed text-left lg:text-center lg:mx-auto">{t.gallery.intro}</p>}
     </div>
   </section>
-  <Gallery variant="full" />
-</BaseLayout>
+  <Gallery variant="full" t={t} />

@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AboutContent from '../../components/AboutContent.astro';
+import en from '../../locales/en.js';
+import { interpolate } from '../../lib/content';
+const t = en;
+const currentLang = 'en';
+---
+
+<BaseLayout
+  title={interpolate(en.meta.aboutTitle, en)}
+  description={interpolate(en.meta.aboutDescription, en)}
+  t={t} 
+  currentLang={currentLang}
+>
+  <AboutContent t={en} />
+</BaseLayout>

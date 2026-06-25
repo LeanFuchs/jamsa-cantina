@@ -1,10 +1,10 @@
 ---
-import { t } from '../lib/content';
+const { t } = Astro.props;
 ---
 
 <section class="bg-base-200">
   <div class="section-shell">
-    <p class="eyebrow">{t.reviews.eyebrow}</p>
+    <p class="eyebrow !text-primary">{t.reviews.eyebrow}</p>
     <h2 class="mt-3 font-serif text-4xl font-bold text-neutral">{t.reviews.heading}</h2>
     
     <div class="mt-8 grid gap-6 md:grid-cols-3">

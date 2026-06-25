@@ -3,33 +3,38 @@ import '../styles.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import JsonLd from '../components/JsonLd.astro';
-import { interpolate, siteInfo as info, t } from '../lib/content';
-
-const {
-  title = interpolate(t.meta.defaultTitle),
-  description = t.business.description
-} = Astro.props;
+import { ViewTransitions } from 'astro:transitions';
+import { siteInfo as info } from '../lib/content';
+const { t, currentLang, title, description } = Astro.props;
 ---
-
 <!doctype html>
-<html lang="es" data-theme="trattoria">
+<html lang={currentLang} data-theme="jamsa">
   <head>
+    <ViewTransitions />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={new URL(Astro.url.pathname, info.website)} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, info.website).href} />
+    
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={new URL(info.images.hero, info.website)} />
-    <JsonLd />
+    <meta property="og:image" content={new URL(info.images.hero, info.website).href} />
+    
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content={t.business.name} /> 
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    
+    <JsonLd t={t} />
   </head>
-  <body class="min-h-screen bg-base-100 text-base-content">
-    <Header />
+    <body class="min-h-screen bg-base-100 text-base-content">
+    <Header t={t} currentLang={currentLang} />
     <main>
-      <slot />
-    </main>
-    <Footer />
+      <slot /> </main>
+    <Footer t={t} currentLang={currentLang} />
   </body>
 </html>

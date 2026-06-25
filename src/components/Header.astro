@@ -1,101 +1,86 @@
 ---
-import { siteInfo as info, t } from '../lib/content';
-// 1. Updated extension to match your logo.jpg
+// src/components/Header.astro
+import { siteInfo as info } from '../lib/content';
 import logo from '../assets/logo.png'; 
 import { Image } from 'astro:assets';
+import whatsappUrl from '../utils/get-whatsapp-url'
+
+const { t, currentLang = 'es' } = Astro.props;
+
+// Mapeo de rutas localizadas
+const routes = {
+  es: { home: '/', about: '/sobre-nosotros', gallery: '/galeria', contact: '/contacto' },
+  en: { home: '/en', about: '/en/about', gallery: '/en/gallery', contact: '/en/contact' }
+};
+
+const currentRoutes = routes[currentLang as keyof typeof routes];
 
 const links = [
-  { href: '/', label: t.nav.home },
-  { href: '/about', label: t.nav.about },
-  { href: '/gallery', label: t.nav.gallery },
-  { href: '/contact', label: t.nav.contact }
+  { href: currentRoutes.home, label: t.nav.home },
+  { href: currentRoutes.about, label: t.nav.about },
+  { href: currentRoutes.gallery, label: t.nav.gallery },
+  { href: currentRoutes.contact, label: t.nav.contact }
 ];
 ---
-<header class="sticky top-0 z-50 border-b border-base-300 bg-base-100/95 backdrop-blur">
-  <nav
-    class="navbar mx-auto max-w-6xl px-4 sm:px-6 lg:px-8"
-    aria-label="Primary navigation"
-  >
-    <div class="navbar-start">
-      <div class="dropdown lg:hidden">
-        <label tabindex="0" class="btn btn-ghost btn-circle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </label>
 
-        <ul
-          tabindex="0"
-          class="menu dropdown-content z-[100] mt-3 w-56 rounded-box bg-base-100 p-2 shadow"
-        >
+<header class="sticky top-0 z-50 border-b border-base-200 bg-base-100/80 backdrop-blur-md">
+  <nav class="navbar mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 h-16" aria-label="Primary navigation">
+    
+    <!-- NAVBAR START -->
+    <div class="navbar-start gap-1">
+      <div class="dropdown lg:hidden">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </div>
+        <ul tabindex="0" class="menu menu-sm dropdown-content z-[100] mt-3 w-56 rounded-xl bg-base-100 p-2 shadow-xl border border-base-200 nav-links-mobile">
           {links.map((link) => (
-            <li>
-              <a href={link.href}>{link.label}</a>
-            </li>
+            <li><a href={link.href} class="py-2.5 rounded-lg font-medium transition-colors">{link.label}</a></li>
           ))}
         </ul>
       </div>
 
-      <a href="/" class="flex items-center gap-3">
-        {/* 2. Changed src="logo" to src={logo} */}
-        <Image
-          src={logo}
-          alt={t.business.name}
-          class="h-14 w-auto"
-        />
-        <span class="text-lg font-medium text-neutral">
+      <a href={currentRoutes.home} class="flex items-center gap-2.5 group shrink-0">
+        <Image src={logo} alt={t.business.name} class="h-12 w-auto object-contain transition-transform group-hover:scale-105" />
+        <span class="hidden min-[400px]:block text-lg font-medium tracking-tight text-base-content">
           {t.business.name}
         </span>
       </a>
     </div>
 
+    <!-- NAVBAR CENTER -->
     <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-horizontal px-1">
+      <ul class="flex items-center gap-1 nav-links-desktop">
         {links.map((link) => (
           <li>
-            <a href={link.href}>{link.label}</a>
+            <a href={link.href} class="font-medium px-4 py-2 rounded-lg text-base-content/80 hover:text-base-content hover:bg-base-200/60 transition-all">
+              {link.label}
+            </a>
           </li>
         ))}
       </ul>
     </div>
 
+    <!-- NAVBAR END -->
     <div class="navbar-end gap-2">
-      <a
-        class="btn btn-ghost hidden md:inline-flex"
-        href={info.instagramUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {t.cta.instagram}
-      </a>
+      <!-- Selector de Idioma -->
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-sm text-xs font-bold uppercase tracking-widest">
+          {currentLang}
+        </div>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-20">
+          <li><a href="/">ES</a></li>
+          <li><a href="/en">EN</a></li>
+        </ul>
+      </div>
 
-      <a
-        class="btn btn-ghost hidden sm:inline-flex"
-        href={info.menuUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {t.cta.menu}
-      </a>
+      {info.menuUrl && (
+        <a class="btn btn-ghost btn-sm font-medium hidden sm:inline-flex" href={info.menuUrl} target="_blank" rel="noreferrer">{t.cta.menu}</a>
+      )}
 
-      <a
-        class="btn btn-primary"
-        href={info.mapUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {t.cta.directions}
+      <a class="btn btn-primary btn-sm sm:btn-md font-semibold shadow-sm" href={whatsappUrl} target="_blank" rel="noreferrer">
+        {t.footer.reservation}
       </a>
     </div>
   </nav>

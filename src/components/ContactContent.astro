@@ -1,0 +1,33 @@
+---
+// src/components/ContactContent.astro
+import LocationCard from './LocationCard.astro';
+import { interpolate, siteInfo as info } from '../lib/content';
+import whatsappUrl from '../utils/get-whatsapp-url';
+
+// Recibimos el diccionario (es o en) de la página conector
+const { t } = Astro.props;
+---
+
+<section class="relative bg-[#f4eadb] py-16 md:py-24 overflow-hidden border-b border-neutral/5">
+  <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+  <div class="section-shell relative max-w-4xl mx-auto flex flex-col items-stretch lg:items-center">
+    <p class="eyebrow uppercase tracking-widest text-xs font-bold text-[#005a66] text-left lg:w-full lg:max-w-3xl">
+      {t.contact.eyebrow}
+    </p>
+    
+    <h1 class="mt-4 font-serif text-4xl font-bold leading-tight text-neutral sm:text-5xl lg:text-6xl text-left lg:text-center max-w-3xl lg:mx-auto">
+      {t.contact.heading}
+    </h1>
+    
+    <div class="mt-8 flex flex-col sm:flex-row gap-4 w-full justify-start lg:justify-center items-center">
+      <a class="btn btn-primary btn-md px-8 shadow-md w-full sm:w-auto min-w-[200px]" href={whatsappUrl} target="_blank" rel="noreferrer">
+        {t.cta.reservationWhatsapp}
+      </a>
+      <a class="btn btn-outline border-neutral text-neutral hover:bg-neutral hover:text-base-100 btn-md px-8 w-full sm:w-auto min-w-[160px]" href={info.menuUrl} target="_blank" rel="noreferrer">
+        {t.cta.menu}
+      </a>
+    </div>
+  </div>
+</section>
+
+<LocationCard t={t} />

@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NotFoundContent from '../components/NotFoundContent.astro';
+import es from '../locales/es.js';
+const t = es;
+const currentLang = 'es';
+---
+
+<BaseLayout 
+  title={`404 - ${es.meta.notFoundTitle || 'No Encontrado'}`}
+  t={t} 
+  currentLang={currentLang}
+>
+  <NotFoundContent t={es} />
+</BaseLayout>

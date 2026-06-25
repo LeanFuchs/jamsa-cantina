@@ -1,0 +1,35 @@
+---
+// src/components/HomeContent.astro
+import Hero from './Hero.astro';
+import LocationCard from './LocationCard.astro';
+import Gallery from './Gallery.astro';
+import Reviews from './Reviews.astro';
+import { interpolate } from '../lib/content';
+
+// Recibimos el diccionario dinámico (es o en) desde la página que invoca este componente
+const { t } = Astro.props;
+---
+
+<!-- Pasamos el diccionario a cada componente para internacionalizar su contenido interno -->
+<Hero t={t} />
+<LocationCard t={t} />
+
+<!-- Explicitly set the limit prop to 15 here -->
+<Gallery variant="preview" limit={15} t={t} />
+<Reviews t={t} />
+
+<section class="bg-base-100">
+  <div class="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+    <div>
+      <p class="eyebrow">{t.home.aboutEyebrow}</p>
+      <h2 class="mt-3 font-serif text-4xl font-bold text-neutral">
+        {interpolate(t.home.aboutHeading)}
+      </h2>
+    </div>
+    <div class="space-y-5 text-lg leading-8">
+      {t.home.aboutParagraphs.map((paragraph) => (
+        <p>{interpolate(paragraph)}</p>
+      ))}
+    </div>
+  </div>
+</section>

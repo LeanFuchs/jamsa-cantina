@@ -1,7 +1,6 @@
 ---
-// src/pages/en/contact.astro
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HomeContent from '../components/HomeContent.astro';
+import GalleryContent from '../components/GalleryContent.astro';
 import es from '../locales/es.js';
 import { interpolate } from '../lib/content';
 const t = es;
@@ -9,10 +8,10 @@ const currentLang = 'es';
 ---
 
 <BaseLayout
-  title={interpolate(es.meta.defaultTitle, es)}
-  description={interpolate(es.business.description, es)}
+  title={interpolate(es.meta.galleryTitle, es)}
+  description={interpolate(es.meta.galleryDescription, es)}
   t={t} 
   currentLang={currentLang}
 >
-  <HomeContent t={es} />
+  <GalleryContent t={es} />
 </BaseLayout>

@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactContent from '../../components/ContactContent.astro';
+import en from '../../locales/en.js';
+import { interpolate } from '../../lib/content';
+const t = en;
+const currentLang = 'en';
+---
+
+<BaseLayout
+  title={interpolate(en.meta.contactTitle, en)}
+  description={interpolate(en.meta.contactDescription, en)}
+  t={t} 
+  currentLang={currentLang}
+>
+  <ContactContent t={en} />
+</BaseLayout>

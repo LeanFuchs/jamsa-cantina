@@ -3,8 +3,8 @@ export default {
     name: 'Jamsa Cantina',
     tagline: 'Un viaje a través de sabores que te llevan al otro lado del mundo. Platos pensados para compartir, especias vibrantes y panes artesanales recién salidos de nuestro horno de leña.',
     description:
-      'Traemos la esencia, la historia y la magia de las calles de Jerusalén a nuestra cocina. Platos pensados al detalle, pan recién horneado y combinaciones que te transportan al otro lado del mundo.',
-    servesCuisine: 'Medio oriente',
+      'Traemos la esencia, la historia y la magia de las calles de Jerusalén a nuestra cocina.',
+    servesCuisine: 'Cocina de Medio Oriente, Comida Árabe, Fusión Israelí',
     neighborhood: 'Palermo',
     cityState: 'Ciudad de Buenos Aires',
     atmosphere: 'Cantina cálida, vibrante y acogedora. Un viaje a través de los sentidos.',
@@ -20,7 +20,8 @@ export default {
     directions: 'Cómo llegar',
     menu: 'Menú',
     instagram: 'Instagram',
-    followInstagram: 'Seguinos en Instagram'
+    followInstagram: 'Seguinos en Instagram',
+    reservationWhatsapp: 'Reservá por WhatsApp',
   },
   labels: {
     address: 'Dirección',
@@ -44,28 +45,27 @@ export default {
     sunday: 'Domingo'
   },
   images: {
-    heroAlt: 'Entrada de Jamsa Cantina de noche, con el cartel iluminado sobre el toldo y el comedor a la vista',
-    // Order matches info.json -> images.gallery (assetMap keys in Gallery.astro).
+    heroAlt: 'Fachada del restaurante de Medio Oriente Jamsa Cantina en Palermo de noche, con el comedor a la vista',    // Order matches info.json -> images.gallery (assetMap keys in Gallery.astro).
     // Update both arrays together if you reorder or add/remove gallery photos.
-    galleryAlt: [
-      'Lehmeyún horneado con tahini y cebolla morada',
-      'Berenjenas asadas con granada y hierbas frescas',
-      'Hummus cremoso con garbanzos especiados y pimentón',
-      'Pollo al horno de leña con salsa de mostaza y verduras',
-      'Albóndigas en salsa con crema de hierbas',
-      'Tabule fresco con granada',
-      'Latkes crocantes con puré de manzana y crema',
-      'Osobuco braseado con verduras y crema de limón',
-      'Pimientos asados rellenos de arroz y carne',
-      'Fatush con pan crocante y sumac',
-      'Malabi con almíbar de rosas, coco y pistacho',
-      'Peras escalfadas con crema especiada',
-      'Lehmeyún visto de cerca sobre la mesa',
-      'Platitos para compartir en la mesa de Jamsa',
-      'Platitos para compartir en la mesa de Jamsa',
-      'Platitos para compartir en la mesa de Jamsa',
-      'Platitos para compartir en la mesa de Jamsa'
-    ]
+    galleryAlt: {
+      albondigas: "Albóndigas de cordero y arándanos con labneh y hierbas aromáticas cocina de Medio Oriente Jamsa",
+      berenjenas: "Berenjena asada a la leña con granada fresca, ajo, limón y aceite de oliva plato árabe vegetariano",
+      osobuco: "Estofado de osobuco de cocción lenta con ciruelas, puerro y labneh Jamsa cocina tradicional",
+      pollo: "Pata muslo de pollo a la leña marinado en arak con mandarina e hinojo gastronomía de Medio Oriente",
+      latkes: "Latkes de papa y zanahoria crocantes acompañados con dips de crema agria y salsa de manzana",
+      tabule: "Ensalada tabulé tradicional con trigo burgol, tomate, perejil, menta fresca y granada",
+      lehmeyun: "Lehmeyún casero empanada abierta de cordero especiado con salsa tahina y cebolla encurtida",
+      hummusVeggie: "Plato de hummus cremoso con garbanzos fritos, pepinillos lactofermentados y aceite de oliva",
+      pimientos: "Pimientos rellenos con arroz y cordero sobre salsa de tomate especiada con harissa",
+      fatush: "Ensalada fatush con pan pita crocante, labneh, rabanito, hierbas frescas y sumac",
+      malabi: "Postre malabi artesanal con almíbar de rosas, hibiscus, coco rallado y pistachos picados",
+      peras: "Peras al vino torrontés con cardamomo y crema chantilly perfumada con cedrón postre Jamsa",
+      lehmeyunEspejo: "Primer plano de empanada árabe lehmeyún de cordero servida en la mesa del restaurante Jamsa",
+      platitos1: "Variedad de platitos de comida árabe y hummus para compartir en el restaurante de Medio Oriente Jamsa",
+      platitos2: "Mesa servida con shakshuka, hummus, pan pita casero y platos tradicionales de Jamsa cocina árabe",
+      platitos3: "Experiencia gastronómica en Jamsa platos de tapeo de Medio Oriente y ensaladas frescas para compartir",
+      platitos4: "Selección culinaria de platos típicos de Medio Oriente y shawarma de cordero en la mesa de Jamsa"
+    }
   },
   nav: {
     home: 'La Cantina',
@@ -74,16 +74,16 @@ export default {
     contact: 'Contacto'
   },
  meta: {
-  defaultTitle: '{name} - Cocina de Jerusalén en {cityState}',
-  aboutTitle: 'Sobre {name} - Cantina de Sabores de Jerusalén en {cityState}',
+  defaultTitle: '{name} - Restaurante de Medio Oriente',
+  aboutTitle: 'Sobre Nosotros - {name} Árabe en Palermo',
   aboutDescription:
     'Jamsa es una cantina en Palermo inspirada en las calles de Jerusalén. Disfrutá de panes artesanales al horno de leña, especias únicas y platos pensados para compartir en un ambiente cálido y relajado.',
-  galleryTitle: 'Galería de {name} - Fotos de Platos y Nuestra Cantina',
+  galleryTitle: 'Fotos de Platos y Galería | {name} Palermo',
   galleryDescription:
     'Recorré la galería de {name}. Mirá fotos de nuestros platos icónicos, el horno de leña y el ambiente de nuestra cantina en {neighborhood}.',
-  contactTitle: 'Contacto {name} - Dirección y Horarios',
+  contactTitle: 'Reservas, Horarios y Dirección | {name} Palermo',
   contactDescription:
-    'Encontrá a {name} en {street}, {cityState}. Consultá nuestros horarios de apertura, teléfono, cómo llegar y el enlace a nuestro menú actualizado.'
+    'Encontrá a {name} en {street}, {cityState}. Consultá nuestros horarios de apertura, teléfono, cómo llegar y el enlace a nuestro menú actualizado.',
 },
   home: {
     aboutEyebrow: 'Sobre Nosotros',
@@ -96,21 +96,23 @@ export default {
   },
   about: {
     eyebrow: 'Sobre nosotros',
-    heading: 'Una cantina en Palermo inspirada en los sabores de Jerusalén',
+    heading: 'Auténtica cocina de Medio Oriente y horno de leña en Palermo',
     paragraphs: [
       'Jamsa es una cantina ubicada en Palermo, Ciudad de Buenos Aires, nacida para rendir homenaje a los sabores, aromas y culturas de Medio Oriente. Nuestra cocina se basa en el respeto por los ingredientes y la tradición, con un menú donde se destacan los panes artesanales recién salidos del horno de leña, mezclas de especias únicas, vegetales de estación y carnes braseadas de cocción lenta.',
       'El restaurante está pensado para quienes buscan una comida auténtica, relajada y confortable, lejos de la formalidad de un menú de pasos. Vecinos del barrio, viajeros y amantes de la buena gastronomía se encuentran acá para compartir platos en el centro de la mesa, disfrutar de un buen vino y recibir un servicio atento y cercano.',
       "Nuestros platos emblemáticos incluyen el Hummus cremoso, el auténtico Shawarma de cordero en pan laffa, el Kawarama a la leña y el icónico Malabi con almíbar de rosas. La atmósfera es la de una cantina cálida, vibrante y acogedora; un verdadero viaje a través de los sentidos. Mantenemos nuestra carta siempre actualizada en una página externa para que siempre puedas descubrir las propuestas más frescas de la temporada."
-    ]
+    ],
+    ourHistory: 'Nuestra Historia',
+    specialtiesLabel: 'Platos emblemáticos',
   },
   gallery: {
     eyebrow: 'Galería',
-    heading: 'Nuestros platos',
+    heading: 'Nuestras especialidades árabes y platos para compartir',
     pageHeading: 'Postales de nuestra cocina y el encuentro alrededor de la mesa'
   },
   location: {
     eyebrow: 'Ubicación y Horarios',
-    heading: 'Vení a probar'
+    heading: 'Vení a probar la experiencia Jamsa en Palermo'
   },
   reviews: {
     eyebrow: 'Reseñas',
@@ -146,8 +148,13 @@ export default {
   },
   contact: {
     eyebrow: 'Contacto',
-    heading: 'Reservas, dirección y horarios'
+    heading: 'Reservas, dirección de la cantina y horarios de atención'
   },
+footer: {
+  navigation: 'Navegación',
+  reservation: 'Reservas',
+  description: 'Traemos la esencia, la historia y la magia de las calles de Jerusalén a nuestra cocina. Platos pensados al detalle, pan recién horneado y combinaciones que te transportan al otro lado del mundo.',
+},
 llms: {
   title: '# {name}',
   summary: 'Cantina de cocina inspirada en las calles de Jerusalén en {cityState}.',
@@ -160,5 +167,8 @@ llms: {
   websiteLabel: 'Sitio web',
   menuLabel: 'Menú',
   hoursSummary: 'Mar-Vie 7pm-12am, Sáb-Dom 12pm-4pm & 8pm-12am (Lun Cerrado)'
+},
+errors: {
+  notFound: 'La página que estás buscando no existe o ha sido movida.'
+  },
 }
-};

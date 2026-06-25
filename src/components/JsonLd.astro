@@ -1,35 +1,46 @@
 ---
-import { siteInfo as info, t } from '../lib/content';
+// src/components/JsonLd.astro
+import { siteInfo as info } from '../lib/content';
+const { t } = Astro.props;
 
-const openingHoursSpecification = info.hours
-  .filter((hour) => !hour.closed)
-  .flatMap((hour) =>
-    hour.intervals.map((interval) => ({
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: hour.dayKey.charAt(0).toUpperCase() + hour.dayKey.slice(1),
-      opens: interval.opens,
-      closes: interval.closes
-    }))
-  );
+// 1. Buscamos de manera segura 'hours' en info, o usamos las de 't' si las moviste ahí.
+const hoursData = Array.isArray(info?.hours) ? info.hours : [];
+
+// 2. Mapeamos de forma segura comprobando que sea un array
+const openingHoursSpecification = Array.isArray(hoursData) 
+  ? hoursData
+      .filter((hour) => hour && !hour.closed && hour.intervals)
+      .flatMap((hour) =>
+        hour.intervals.map((interval) => ({
+          '@type': 'OpeningHoursSpecification',
+          // Schema.org exige los días en inglés (ej: "Monday"). 
+          // Si tu dayKey está en español, asegúrate de que se resuelva al formato correcto.
+          dayOfWeek: hour.dayKey.charAt(0).toUpperCase() + hour.dayKey.slice(1),
+          opens: interval.opens,
+          closes: interval.closes
+        }))
+      )
+  : [];
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Restaurant',
-  name: t.business.name,
-  image: new URL(info.images.hero, info.website).toString(),  url: info.website,
-  telephone: info.phone,
+  name: t.business?.name || "Jamsa Cantina",
+  image: info.images?.hero ? new URL(info.images.hero, info.website).toString() : '',
+  url: info.website,
+  telephone: info.phoneDisplay || '', // Usamos phoneDisplay que está en tu info
   address: {
     '@type': 'PostalAddress',
-    streetAddress: info.address.street,
-    addressLocality: info.address.city,
-    addressRegion: info.address.region,
-    postalCode: info.address.postalCode,
-    addressCountry: info.address.country
+    streetAddress: info.address?.street || '',
+    addressLocality: info.address?.city || 'Palermo',
+    addressRegion: info.address?.region || 'CABA',
+    postalCode: info.address?.postalCode || '',
+    addressCountry: info.address?.country || 'AR'
   },
   openingHoursSpecification,
-  servesCuisine: t.business.servesCuisine,
-  menu: info.menuUrl,
-  sameAs: [info.instagramUrl]
+  servesCuisine: t.business?.servesCuisine || '',
+  menu: info.menuUrl || '',
+  sameAs: info.instagramUrl ? [info.instagramUrl] : []
 };
 ---
 
