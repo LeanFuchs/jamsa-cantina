@@ -21,7 +21,7 @@ export default {
     menu: 'Menu',
     instagram: 'Instagram',
     followInstagram: 'Follow us on Instagram',
-    reservationWhatsapp: 'Reserve via WhatsApp',
+    reservationWhatsapp: 'Book a table',
   },
   labels: {
     address: 'Address',
@@ -46,8 +46,6 @@ export default {
   },
   images: {
     heroAlt: 'Facade of Jamsa Cantina Middle Eastern restaurant in Palermo at night, with the dining room visible',
-    // Order matches info.json -> images.gallery (assetMap keys in Gallery.astro).
-    // Update both arrays together if you reorder or add/remove gallery photos.
     galleryAlt: {
       albondigas: "Lamb and cranberry meatballs with labneh and aromatic herbs, Middle Eastern cuisine at Jamsa",
       berenjenas: "Wood-fired roasted eggplant with fresh pomegranate, garlic, lemon and olive oil, Arabic vegetarian dish",
@@ -66,10 +64,13 @@ export default {
       platitos2: "Table set with shakshuka, hummus, homemade pita bread and traditional Jamsa Arabic dishes",
       platitos3: "Culinary experience at Jamsa with Middle Eastern sharing plates and fresh salads",
       platitos4: "A culinary selection of typical Middle Eastern dishes and lamb shawarma on the table at Jamsa"
-    }
+    },
   },
   meta: {
     defaultTitle: '{name} - Middle Eastern Restaurant',
+    homeTitle: '{name} | Middle Eastern Restaurant in Palermo',
+    homeDescription:
+      'Jamsa Cantina is a Middle Eastern restaurant in Palermo, Buenos Aires. Jerusalem-inspired cooking, wood-fired bread, creamy hummus, lamb shawarma, reservations and updated menu.',
     aboutTitle: 'About Us - {name} Arabic Cuisine in Palermo',
     aboutDescription:
       'Jamsa is a cantina in Palermo inspired by the streets of Jerusalem. Enjoy artisanal wood-fired breads, unique spices and dishes made for sharing in a warm, relaxed setting.',
@@ -99,6 +100,7 @@ export default {
     ],
     ourHistory: 'Our History',
     specialtiesLabel: 'Signature dishes',
+    seeFullMenu: 'See full menu',
   },
   gallery: {
     eyebrow: 'Gallery',
@@ -112,6 +114,7 @@ export default {
   reviews: {
     eyebrow: 'Reviews',
     heading: 'What our guests say',
+    verifiedReview: 'Verified review on Google Maps',
     items: [
       {
         author: 'Gabriela Gallardo',

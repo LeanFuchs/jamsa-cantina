@@ -20,3 +20,107 @@ body {
 .eyebrow {
   @apply text-sm font-semibold uppercase tracking-wide text-secondary;
 }
+
+.arabic-pattern {
+  --pattern-color: #005b56;
+  background-image:
+    linear-gradient(67.5deg, var(--pattern-color) 5%, transparent 5.5%),
+    linear-gradient(157.5deg, var(--pattern-color) 5%, transparent 5.5%),
+    linear-gradient(67.5deg, transparent 94.5%, var(--pattern-color) 95%),
+    linear-gradient(157.5deg, transparent 94.5%, var(--pattern-color) 95%),
+    linear-gradient(22.5deg, var(--pattern-color) 5%, transparent 5.5%),
+    linear-gradient(112.5deg, var(--pattern-color) 5%, transparent 5.5%),
+    linear-gradient(22.5deg, transparent 94.5%, var(--pattern-color) 95%),
+    linear-gradient(112.5deg, transparent 94.5%, var(--pattern-color) 95%),
+    linear-gradient(22.5deg, transparent 34%, var(--pattern-color) 34%, var(--pattern-color) 35%, transparent 35%, transparent 65%, var(--pattern-color) 65%, var(--pattern-color) 66%, transparent 66%),
+    linear-gradient(-22.5deg, transparent 34%, var(--pattern-color) 34%, var(--pattern-color) 35%, transparent 35%, transparent 65%, var(--pattern-color) 65%, var(--pattern-color) 66%, transparent 66%),
+    linear-gradient(112.5deg, transparent 34%, var(--pattern-color) 34%, var(--pattern-color) 35%, transparent 35%, transparent 65%, var(--pattern-color) 65%, var(--pattern-color) 66%, transparent 66%),
+    linear-gradient(-112.5deg, transparent 34%, var(--pattern-color) 34%, var(--pattern-color) 35%, transparent 35%, transparent 65%, var(--pattern-color) 65%, var(--pattern-color) 66%, transparent 66%);
+  background-size: 96px 96px;
+  background-position:
+    -38px 58px, -58px 58px, -58px 38px, -38px 38px,
+    -58px 38px, -38px 38px, -38px 58px, -58px 58px,
+    0 0, 0 0, 0 0, 0 0;
+}
+
+.arabic-pattern.is-faded-y {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%, black 15%, black 85%, transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%, black 15%, black 85%, transparent 100%
+  );
+}
+
+.pattern-rosette {
+  --pattern-color: #005b56;
+  background-image:
+    radial-gradient(circle at 50% 50%, transparent 0 18%, var(--pattern-color) 18.5% 20%, transparent 20.5%),
+    radial-gradient(circle at 0 0, transparent 0 18%, var(--pattern-color) 18.5% 20%, transparent 20.5%),
+    radial-gradient(circle at 100% 0, transparent 0 18%, var(--pattern-color) 18.5% 20%, transparent 20.5%),
+    radial-gradient(circle at 0 100%, transparent 0 18%, var(--pattern-color) 18.5% 20%, transparent 20.5%),
+    radial-gradient(circle at 100% 100%, transparent 0 18%, var(--pattern-color) 18.5% 20%, transparent 20.5%),
+    linear-gradient(45deg, transparent 48.5%, var(--pattern-color) 49%, var(--pattern-color) 50%, transparent 50.5%),
+    linear-gradient(-45deg, transparent 48.5%, var(--pattern-color) 49%, var(--pattern-color) 50%, transparent 50.5%);
+  background-size: 68px 68px;
+}
+
+.pattern-rosette.is-faded-y {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%, black 12%, black 88%, transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%, black 12%, black 88%, transparent 100%
+  );
+}
+
+.pattern-zellij {
+  --pattern-color: #005b56;
+  background-image:
+    linear-gradient(30deg, transparent 39%, var(--pattern-color) 40%, var(--pattern-color) 41%, transparent 42%),
+    linear-gradient(150deg, transparent 39%, var(--pattern-color) 40%, var(--pattern-color) 41%, transparent 42%),
+    linear-gradient(30deg, transparent 58%, var(--pattern-color) 59%, var(--pattern-color) 60%, transparent 61%),
+    linear-gradient(150deg, transparent 58%, var(--pattern-color) 59%, var(--pattern-color) 60%, transparent 61%),
+    linear-gradient(90deg, transparent 49%, var(--pattern-color) 49.5%, var(--pattern-color) 50.5%, transparent 51%);
+  background-size: 84px 48px;
+}
+
+.pattern-zellij.is-faded-y {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%, black 12%, black 88%, transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%, black 12%, black 88%, transparent 100%
+  );
+}
+
+.pattern-medallion {
+  --pattern-color: #005b56;
+  background-image:
+    radial-gradient(circle at 50% 50%, transparent 0 24%, var(--pattern-color) 24.5% 26%, transparent 26.5%),
+    radial-gradient(circle at 50% 50%, transparent 0 39%, var(--pattern-color) 39.5% 41%, transparent 41.5%),
+    linear-gradient(45deg, transparent 48.5%, var(--pattern-color) 49%, var(--pattern-color) 50%, transparent 50.5%),
+    linear-gradient(-45deg, transparent 48.5%, var(--pattern-color) 49%, var(--pattern-color) 50%, transparent 50.5%),
+    linear-gradient(90deg, transparent 49%, var(--pattern-color) 49.5%, var(--pattern-color) 50.5%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, var(--pattern-color) 49.5%, var(--pattern-color) 50.5%, transparent 51%);
+  background-size: 76px 76px;
+  background-position: 0 0, 38px 38px, 0 0, 0 0, 38px 38px, 38px 38px;
+}
+
+.pattern-medallion.is-faded-y {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%, black 12%, black 88%, transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%, black 12%, black 88%, transparent 100%
+  );
+}
+

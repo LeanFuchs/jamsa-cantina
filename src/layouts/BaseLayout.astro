@@ -3,24 +3,57 @@ import '../styles.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import JsonLd from '../components/JsonLd.astro';
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import { siteInfo as info } from '../lib/content';
-const { t, currentLang, title, description } = Astro.props;
+import heroImage from '../assets/hero.webp';
+
+const { t, currentLang, title, description, pageType = 'website' } = Astro.props;
+
+const routeAlternates = {
+  '/': { es: '/', en: '/en' },
+  '/sobre-nosotros': { es: '/sobre-nosotros', en: '/en/about' },
+  '/galeria': { es: '/galeria', en: '/en/gallery' },
+  '/contacto': { es: '/contacto', en: '/en/contact' },
+  '/en': { es: '/', en: '/en' },
+  '/en/about': { es: '/sobre-nosotros', en: '/en/about' },
+  '/en/gallery': { es: '/galeria', en: '/en/gallery' },
+  '/en/contact': { es: '/contacto', en: '/en/contact' }
+};
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const alternates = routeAlternates[pathname] || { [currentLang]: pathname };
+const canonicalUrl = new URL(alternates[currentLang] || pathname, info.website).href;
+const ogImageUrl = new URL(heroImage.src, info.website).href;
 ---
 <!doctype html>
 <html lang={currentLang} data-theme="jamsa">
   <head>
-    <ViewTransitions />
+    <ClientRouter />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={new URL(Astro.url.pathname, info.website).href} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={canonicalUrl} />
+    {alternates.es && <link rel="alternate" hreflang="es-AR" href={new URL(alternates.es, info.website).href} />}
+    {alternates.en && <link rel="alternate" hreflang="en" href={new URL(alternates.en, info.website).href} />}
+    {alternates.es && <link rel="alternate" hreflang="x-default" href={new URL(alternates.es, info.website).href} />}
     <link rel="llms-txt" href="/llms.txt" />
+    <meta name="theme-color" content="#f8f1e7" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content={new URL(info.images.hero, info.website).href} />
+    <meta property="og:type" content={pageType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={t.business.name} />
+    <meta property="og:locale" content={currentLang === 'es' ? 'es_AR' : 'en_US'} />
+    {currentLang === 'es' && <meta property="og:locale:alternate" content="en_US" />}
+    {currentLang === 'en' && <meta property="og:locale:alternate" content="es_AR" />}
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={t.images.heroAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
     
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
@@ -29,7 +62,7 @@ const { t, currentLang, title, description } = Astro.props;
     <meta name="apple-mobile-web-app-title" content={t.business.name} /> 
     <link rel="manifest" href="/favicon/site.webmanifest" />
     
-    <JsonLd t={t} />
+    <JsonLd t={t} currentLang={currentLang} canonicalUrl={canonicalUrl} ogImageUrl={ogImageUrl} />
   </head>
     <body class="min-h-screen bg-base-100 text-base-content">
     <Header t={t} currentLang={currentLang} />

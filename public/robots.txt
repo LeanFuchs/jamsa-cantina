@@ -1,5 +1,0 @@
-# public/robots.txt
-User-agent: *
-Allow: /
-
-Sitemap: https://jamsa-cantina.pages.dev/sitemap-index.xml

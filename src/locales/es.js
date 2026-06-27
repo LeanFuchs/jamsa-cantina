@@ -21,7 +21,7 @@ export default {
     menu: 'Menú',
     instagram: 'Instagram',
     followInstagram: 'Seguinos en Instagram',
-    reservationWhatsapp: 'Reservá por WhatsApp',
+    reservationWhatsapp: 'Reservar mesa',
   },
   labels: {
     address: 'Dirección',
@@ -45,8 +45,7 @@ export default {
     sunday: 'Domingo'
   },
   images: {
-    heroAlt: 'Fachada del restaurante de Medio Oriente Jamsa Cantina en Palermo de noche, con el comedor a la vista',    // Order matches info.json -> images.gallery (assetMap keys in Gallery.astro).
-    // Update both arrays together if you reorder or add/remove gallery photos.
+    heroAlt: 'Fachada del restaurante de Medio Oriente Jamsa Cantina en Palermo de noche, con el comedor a la vista',
     galleryAlt: {
       albondigas: "Albóndigas de cordero y arándanos con labneh y hierbas aromáticas cocina de Medio Oriente Jamsa",
       berenjenas: "Berenjena asada a la leña con granada fresca, ajo, limón y aceite de oliva plato árabe vegetariano",
@@ -65,7 +64,7 @@ export default {
       platitos2: "Mesa servida con shakshuka, hummus, pan pita casero y platos tradicionales de Jamsa cocina árabe",
       platitos3: "Experiencia gastronómica en Jamsa platos de tapeo de Medio Oriente y ensaladas frescas para compartir",
       platitos4: "Selección culinaria de platos típicos de Medio Oriente y shawarma de cordero en la mesa de Jamsa"
-    }
+    },
   },
   nav: {
     home: 'La Cantina',
@@ -75,6 +74,9 @@ export default {
   },
  meta: {
   defaultTitle: '{name} - Restaurante de Medio Oriente',
+  homeTitle: '{name} | Cocina de Medio Oriente en Palermo',
+  homeDescription:
+    'Jamsa Cantina en Palermo, Buenos Aires: cocina de Medio Oriente inspirada en Jerusal\u00e9n, horno de le\u00f1a, hummus, shawarma, reservas y men\u00fa actualizado.',
   aboutTitle: 'Sobre Nosotros - {name} Árabe en Palermo',
   aboutDescription:
     'Jamsa es una cantina en Palermo inspirada en las calles de Jerusalén. Disfrutá de panes artesanales al horno de leña, especias únicas y platos pensados para compartir en un ambiente cálido y relajado.',
@@ -104,6 +106,7 @@ export default {
     ],
     ourHistory: 'Nuestra Historia',
     specialtiesLabel: 'Platos emblemáticos',
+    seeFullMenu: 'Ver menú completo',
   },
   gallery: {
     eyebrow: 'Galería',
@@ -117,6 +120,7 @@ export default {
   reviews: {
     eyebrow: 'Reseñas',
     heading: 'Lo que dicen nuestros clientes',
+    verifiedReview: 'Reseña verificada en Google Maps',
     items: [
       {
         author: 'Gabriela Gallardo',

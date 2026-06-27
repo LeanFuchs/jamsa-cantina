@@ -1,5 +1,4 @@
 ---
-// src/pages/en/contact.astro
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HomeContent from '../../components/HomeContent.astro';
 import en from '../../locales/en.js';
@@ -9,8 +8,8 @@ const currentLang = 'en';
 ---
 
 <BaseLayout
-  title={interpolate(en.meta.defaultTitle, en)}
-  description={interpolate(en.business.description, en)}
+  title={interpolate(en.meta.homeTitle, en)}
+  description={interpolate(en.meta.homeDescription, en)}
   t={t} 
   currentLang={currentLang}
 >

@@ -1,12 +1,10 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
 import Gallery from '../components/Gallery.astro';
-import { interpolate } from '../lib/content';
 const { t } = Astro.props;
 ---
 
   <section class="relative bg-[#f4eadb] py-16 md:py-24 overflow-hidden border-b border-neutral/5">
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+    <div class="pattern-rosette is-faded-y absolute inset-0 pointer-events-none opacity-[0.04]"></div>
     <div class="section-shell relative max-w-4xl mx-auto flex flex-col items-stretch lg:items-center">
       <p class="eyebrow uppercase tracking-widest text-xs font-bold text-[#005a66] text-left lg:w-full lg:max-w-3xl">{t.gallery.eyebrow}</p>
       

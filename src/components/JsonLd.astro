@@ -1,46 +1,74 @@
 ---
-// src/components/JsonLd.astro
 import { siteInfo as info } from '../lib/content';
-const { t } = Astro.props;
+const { t, currentLang = 'es', canonicalUrl = info.website, ogImageUrl = '' } = Astro.props;
 
-// 1. Buscamos de manera segura 'hours' en info, o usamos las de 't' si las moviste ahí.
 const hoursData = Array.isArray(info?.hours) ? info.hours : [];
 
-// 2. Mapeamos de forma segura comprobando que sea un array
+const dayMap = {
+  monday: 'Monday',
+  tuesday: 'Tuesday',
+  wednesday: 'Wednesday',
+  thursday: 'Thursday',
+  friday: 'Friday',
+  saturday: 'Saturday',
+  sunday: 'Sunday'
+};
+
 const openingHoursSpecification = Array.isArray(hoursData) 
   ? hoursData
       .filter((hour) => hour && !hour.closed && hour.intervals)
       .flatMap((hour) =>
         hour.intervals.map((interval) => ({
           '@type': 'OpeningHoursSpecification',
-          // Schema.org exige los días en inglés (ej: "Monday"). 
-          // Si tu dayKey está en español, asegúrate de que se resuelva al formato correcto.
-          dayOfWeek: hour.dayKey.charAt(0).toUpperCase() + hour.dayKey.slice(1),
+          dayOfWeek: `https://schema.org/${dayMap[hour.dayKey] || hour.dayKey}`,
           opens: interval.opens,
           closes: interval.closes
         }))
       )
   : [];
 
+const restaurantId = `${info.website}/#restaurant`;
+const websiteId = `${info.website}/#website`;
+const primaryImage = ogImageUrl || (info.images?.hero ? new URL(info.images.hero, info.website).toString() : '');
+
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Restaurant',
-  name: t.business?.name || "Jamsa Cantina",
-  image: info.images?.hero ? new URL(info.images.hero, info.website).toString() : '',
-  url: info.website,
-  telephone: info.phoneDisplay || '', // Usamos phoneDisplay que está en tu info
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: info.address?.street || '',
-    addressLocality: info.address?.city || 'Palermo',
-    addressRegion: info.address?.region || 'CABA',
-    postalCode: info.address?.postalCode || '',
-    addressCountry: info.address?.country || 'AR'
-  },
-  openingHoursSpecification,
-  servesCuisine: t.business?.servesCuisine || '',
-  menu: info.menuUrl || '',
-  sameAs: info.instagramUrl ? [info.instagramUrl] : []
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': websiteId,
+      name: t.business?.name || 'Jamsa Cantina',
+      url: info.website,
+      inLanguage: currentLang === 'es' ? 'es-AR' : 'en'
+    },
+    {
+      '@type': 'Restaurant',
+      '@id': restaurantId,
+      name: t.business?.name || 'Jamsa Cantina',
+      description: t.business?.description || '',
+      image: primaryImage,
+      url: canonicalUrl,
+      telephone: info.phoneE164 || info.phoneDisplay || '',
+      priceRange: '$$',
+      acceptsReservations: true,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: info.address?.street || '',
+        addressLocality: info.address?.locality || 'Palermo',
+        addressRegion: info.address?.region || 'CABA',
+        addressCountry: info.address?.country || 'AR'
+      },
+      geo: info.geo ? {
+        '@type': 'GeoCoordinates',
+        latitude: info.geo.latitude,
+        longitude: info.geo.longitude
+      } : undefined,
+      openingHoursSpecification,
+      servesCuisine: t.business?.servesCuisine || '',
+      hasMenu: info.menuUrl || '',
+      sameAs: info.instagramUrl ? [info.instagramUrl] : []
+    }
+  ]
 };
 ---
 

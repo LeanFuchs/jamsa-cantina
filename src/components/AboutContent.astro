@@ -1,11 +1,10 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
 import { interpolate, siteInfo as info } from '../lib/content';
 const { t } = Astro.props;
 ---
 
   <section class="relative bg-[#f4eadb] py-16 md:py-24 overflow-hidden border-b border-neutral/5">
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+    <div class="arabic-pattern is-faded-y absolute inset-0 pointer-events-none opacity-[0.045]"></div>
     <div class="section-shell relative max-w-4xl mx-auto flex flex-col items-stretch lg:items-center">
       <p class="eyebrow uppercase tracking-widest text-xs font-bold text-[#005a66] text-left lg:w-full lg:max-w-3xl">{t.about.eyebrow}</p>
       
@@ -13,7 +12,8 @@ const { t } = Astro.props;
     </div>
   </section>
 
-  <section class="bg-base-100 py-16 md:py-24">
+  <section class="relative bg-base-100 py-16 md:py-24">
+    <div class="pattern-medallion is-faded-y absolute inset-0 pointer-events-none opacity-[0.035]"></div>
     <div class="section-shell grid gap-12 lg:grid-cols-[1.3fr_0.7fr] items-start">
       
       <div class="space-y-6 text-lg leading-8 text-base-content/90">
@@ -40,7 +40,7 @@ const { t } = Astro.props;
             {t.cta.directions}
           </a>
           <a class="btn btn-ghost border-base-300 w-full sm:w-1/2 lg:w-full justify-center text-center" href={info.menuUrl} target="_blank" rel="noreferrer">
-            Ver Menú Completo
+            {t.about.seeFullMenu}
           </a>
         </div>
       </aside>
