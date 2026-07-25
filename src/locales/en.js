@@ -7,8 +7,15 @@ export default {
     servesCuisine: 'Middle Eastern Cuisine, Arabic Food, Israeli Fusion',
     neighborhood: 'Palermo',
     cityState: 'Buenos Aires City',
-    atmosphere: 'A warm, vibrant and welcoming cantina. A journey through the senses.',
-    specialties: ['Creamy hummus', 'Lamb shawarma in laffa bread', 'Wood-fired kawarama', 'Malabi with rose syrup']
+    atmosphere: 'A warm, vibrant and welcoming cantina. A journey through the senses and cultures.',
+    specialties: [
+      'Creamy hummus with fried chickpeas and pickles',
+      'Lamb shawarma in homemade laffa bread with harissa',
+      'Spiced lamb lehmeyun with tahini sauce',
+      'Lamb and cranberry meatballs in fig sauce',
+      'Crispy potato and carrot latkes',
+      'Peppers stuffed with rice and lamb'
+    ],
   },
   nav: {
     home: 'The Cantina',
@@ -73,7 +80,7 @@ export default {
       'Jamsa Cantina is a Middle Eastern restaurant in Palermo, Buenos Aires. Jerusalem-inspired cooking, wood-fired bread, creamy hummus, lamb shawarma, reservations and updated menu.',
     aboutTitle: 'About Us - {name} Arabic Cuisine in Palermo',
     aboutDescription:
-      'Jamsa is a cantina in Palermo inspired by the streets of Jerusalem. Enjoy artisanal wood-fired breads, unique spices and dishes made for sharing in a warm, relaxed setting.',
+      'Jamsa is a cantina in Palermo inspired by the diversity of Jerusalem. Enjoy artisanal wood-fired breads, unique spices and dishes made for sharing in a warm, relaxed setting.',
     galleryTitle: 'Dish Photos and Gallery | {name} Palermo',
     galleryDescription:
       "Browse {name}'s gallery. See photos of our signature dishes, the wood-fired oven and the atmosphere of our cantina in {neighborhood}.",
@@ -83,20 +90,20 @@ export default {
   },
   home: {
     aboutEyebrow: 'About Us',
-    aboutHeading: 'Jamsa is not just a cantina, it\u2019s a little piece of Jerusalem in every dish.',
+    aboutHeading: 'Jamsa is not just a cantina, it’s a little piece of Jerusalem in every dish.',
     aboutParagraphs: [
-      'Jamsa is a cantina with its own soul in Palermo, paying homage to the recipes and stories of the streets of Jerusalem. Our kitchen is built on tradition and respect for ingredients, with a menu that highlights artisanal breads fresh from the wood-fired oven, unique spice blends, seasonal vegetables and dishes made for sharing at the center of the table.',
-      'The atmosphere is warm, relaxed and welcoming; an ideal refuge for a weeknight dinner, a special night out, or a long table among friends with the vibrant rhythm of the neighborhood.',
-      'Among our guests\u2019 favorites you\u2019ll find texture-packed classics like our creamy hummus, authentic lamb shawarma in laffa bread, wood-fired kawarama, or the iconic malabi with rose syrup to finish. We keep our menu always up to date on an external page so you can discover the freshest creations of the season.'
+      'Jamsa is a cantina with its own soul in Palermo, paying homage to the cultural richness, recipes and stories that coexist on the streets of Jerusalem. Our kitchen is built on tradition, respect for ingredients and the meeting of different identities through flavor.',
+      'The atmosphere is warm, relaxed and hospitable; an ideal refuge for a weeknight dinner, a special night out, or sharing a long table among friends with the vibrant rhythm of the neighborhood. At Jamsa, every corner celebrates diversity and the spirit of community.',
+      'Among our guests’ favorites you’ll find shared classics that cross borders, packed with textures like our creamy hummus, authentic lamb shawarma in homemade laffa bread, freshly baked lehmeyun, or the unique lamb and cranberry meatballs in fig sauce. We keep our menu always up to date on an external page so you can discover the freshest creations of the season.',
     ]
   },
   about: {
     eyebrow: 'About us',
-    heading: 'Authentic Middle Eastern cuisine and a wood-fired oven in Palermo',
+    heading: 'Authentic Jerusalem cuisine and a wood-fired oven in Palermo',
     paragraphs: [
-      'Jamsa is a cantina located in Palermo, Buenos Aires City, born to pay homage to the flavors, aromas and cultures of the Middle East. Our kitchen is built on respect for ingredients and tradition, with a menu that highlights artisanal breads fresh from the wood-fired oven, unique spice blends, seasonal vegetables and slow-braised meats.',
-      'The restaurant is designed for those looking for an authentic, relaxed and comfortable meal, far from the formality of a tasting menu. Neighbors, travelers and lovers of good food come together here to share dishes at the center of the table, enjoy a good wine and receive attentive, close service.',
-      'Our signature dishes include creamy hummus, authentic lamb shawarma in laffa bread, wood-fired kawarama and the iconic malabi with rose syrup. The atmosphere is that of a warm, vibrant and welcoming cantina; a true journey through the senses. We keep our menu always up to date on an external page so you can always discover the freshest offerings of the season.'
+      'Jamsa is a cantina located in Palermo, Buenos Aires City, born to pay homage to the cultural richness, aromas and traditions that coexist on the streets of Jerusalem. Our kitchen is built on respect for ingredients, featuring a menu where unique spice blends, seasonal vegetables and slow-braised meats celebrate the meeting of different identities.',
+      'The restaurant is designed for those looking for an authentic, relaxed and hospitable meal, far from the formality of a tasting menu. Neighbors, travelers and lovers of good food come together here to share classics that cross borders at the center of the table, enjoy a good wine and receive attentive, close service.',
+      'Our signature dishes include creamy hummus, authentic lamb shawarma in homemade laffa bread, artisan lehmeyun, and the lamb and cranberry meatballs in fig sauce. The atmosphere is that of a warm, vibrant and welcoming cantina; a true reflection of diversity and community. We keep our menu always up to date on an external page so you can always discover the freshest offerings of the season.'
     ],
     ourHistory: 'Our History',
     specialtiesLabel: 'Signature dishes',
@@ -104,7 +111,7 @@ export default {
   },
   gallery: {
     eyebrow: 'Gallery',
-    heading: 'Our Arabic specialties and sharing plates',
+    heading: 'Our specialties and sharing plates',
     pageHeading: 'Postcards from our kitchen and the gathering around the table'
   },
   location: {
@@ -122,7 +129,7 @@ export default {
         avatarBg: 'bg-red-500',
         rating: 5,
         quote:
-          'Excellent experience. I loved it! The Middle Eastern food is spectacular and super authentic, truly delicious. The place is also beautiful and very calm, ideal for enjoying without rushing. The service was also top notch. Totally recommended. I\u2019ll be back!',
+          'Excellent experience. I loved it! The Middle Eastern food is spectacular and super authentic, truly delicious. The place is also beautiful and very calm, ideal for enjoying without rushing. The service was also top notch. Totally recommended. I’ll be back!',
         source: 'Google review'
       },
       {
@@ -130,7 +137,7 @@ export default {
         avatarText: 'N',
         avatarBg: 'bg-blue-500',
         rating: 5,
-        quote: 'Excellent food, it\u2019s like traveling to the Middle East right in Palermo. There were 4 of us and we were delighted. Not to be missed.',
+        quote: 'Excellent food, it’s like traveling to the Middle East right in Palermo. There were 4 of us and we were delighted. Not to be missed.',
         source: 'Google review'
       },
       {
@@ -139,7 +146,7 @@ export default {
         avatarBg: 'bg-green-600',
         rating: 5,
         relativeTime: '3 months ago',
-        quote: 'It\u2019s an INCREDIBLE experience!!!! The food is extremely delicious, with flavors unlike anything I\u2019d tried before, it\u2019s truly an experience for the palate, and the beauty of the place and the service round it all off perfectly. I highly recommend going and having a spectacular time like we did.',
+        quote: 'It’s an INCREDIBLE experience!!!! The food is extremely delicious, with flavors unlike anything I’d tried before, it’s truly an experience for the palate, and the beauty of the place and the service round it all off perfectly. I highly recommend going and having a spectacular time like we did.',
         source: 'Google review'
       }
     ]

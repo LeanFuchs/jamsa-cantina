@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
-const siteUrl = process.env.PUBLIC_SITE_URL || 'https://jamsa-cantina.pages.dev';
+const siteUrl = process.env.PUBLIC_SITE_URL || 'https://jamsacantina.com';
 
 export default defineConfig({
   integrations: [

@@ -7,8 +7,15 @@ export default {
     servesCuisine: 'Cocina de Medio Oriente, Comida Árabe, Fusión Israelí',
     neighborhood: 'Palermo',
     cityState: 'Ciudad de Buenos Aires',
-    atmosphere: 'Cantina cálida, vibrante y acogedora. Un viaje a través de los sentidos.',
-    specialties: ['Hummus cremoso', 'Shawarma de cordero en pan laffa', 'Kawarama a la leña', 'Malabi con almíbar de rosas']
+    atmosphere: 'Cantina cálida, vibrante y acogedora. Un viaje a través de los sentidos y las culturas.',
+    specialties: [
+      'Hummus cremoso con garbanzos fritos y encurtidos',
+      'Shawarma de cordero en pan laffa casero con harissa',
+      'Lehmeyún de cordero especiado con salsa tahina',
+      'Albóndigas de cordero y arándanos en salsa de higos',
+      'Latkes crocantes de papa y zanahoria',
+      'Pimientos rellenos con arroz y cordero'
+    ],
   },
   nav: {
     home: 'La Cantina',
@@ -31,7 +38,7 @@ export default {
     links: 'Enlaces',
     cuisine: 'Cocina',
     neighborhood: 'Barrio',
-    atmosphere: 'Atmosfera',
+    atmosphere: 'Atmósfera',
     quickFacts: 'Datos rápidos',
     closed: 'Cerrado',
   },
@@ -66,20 +73,14 @@ export default {
       platitos4: "Selección culinaria de platos típicos de Medio Oriente y shawarma de cordero en la mesa de Jamsa"
     },
   },
-  nav: {
-    home: 'La Cantina',
-    about: 'Nosotros',
-    gallery: 'Galería',
-    contact: 'Contacto'
-  },
  meta: {
   defaultTitle: '{name} - Restaurante de Medio Oriente',
   homeTitle: '{name} | Cocina de Medio Oriente en Palermo',
   homeDescription:
     'Jamsa Cantina en Palermo, Buenos Aires: cocina de Medio Oriente inspirada en Jerusal\u00e9n, horno de le\u00f1a, hummus, shawarma, reservas y men\u00fa actualizado.',
-  aboutTitle: 'Sobre Nosotros - {name} Árabe en Palermo',
+  aboutTitle: 'Sobre Nosotros - {name} en Palermo',
   aboutDescription:
-    'Jamsa es una cantina en Palermo inspirada en las calles de Jerusalén. Disfrutá de panes artesanales al horno de leña, especias únicas y platos pensados para compartir en un ambiente cálido y relajado.',
+    'Jamsa es una cantina en Palermo inspirada en la diversidad de Jerusalén. Disfrutá de panes artesanales al horno de leña, especias únicas y platos pensados para compartir en un ambiente cálido y relajado.',
   galleryTitle: 'Fotos de Platos y Galería | {name} Palermo',
   galleryDescription:
     'Recorré la galería de {name}. Mirá fotos de nuestros platos icónicos, el horno de leña y el ambiente de nuestra cantina en {neighborhood}.',
@@ -91,18 +92,18 @@ export default {
     aboutEyebrow: 'Sobre Nosotros',
     aboutHeading: 'Jamsa no es solo una cantina, es un pedacito de Jerusalén en cada plato.',
     aboutParagraphs: [
-      'Jamsa es una cantina con alma propia en Palermo, que rinde homenaje a las recetas e historias de las calles de Jerusalén. Nuestra cocina se basa en la tradición y el respeto por los ingredientes, con un menú donde se destacan los panes artesanales recién salidos del horno de leña, mezclas de especias únicas, vegetales de estación y platos pensados para compartir en el centro de la mesa.',
-      ' El ambiente es cálido, relajado y de encuentro; un refugio ideal tanto para una cena en la semana, una salida especial o para disfrutar de una mesa larga entre amigos con el ritmo vibrante del barrio.',
-      ' Entre los favoritos de nuestros comensales vas a encontrar clásicos llenos de texturas como nuestro Hummus cremoso, el auténtico Shawarma de cordero en pan laffa, el Kawarama a la leña o el icónico Malabi con almíbar de rosas para el final. Mantenemos nuestra carta siempre actualizada en una página externa para que puedas descubrir las creaciones más frescas de la temporada.'
+      'Jamsa es una cantina con alma propia en Palermo, que rinde homenaje a la riqueza cultural, las recetas y las historias que conviven en las calles de Jerusalén. Nuestra cocina se basa en la tradición, el respeto por los ingredientes y el encuentro de diferentes identidades a través del sabor.',
+      'El ambiente es cálido, relajado y hospitalario; un refugio ideal tanto para una cena en la semana, una salida especial o para disfrutar de una mesa larga entre amigos con el ritmo vibrante del barrio. En Jamsa, cada rincón celebra la diversidad y el espíritu de comunidad.',
+      'Entre los favoritos de nuestros comensales vas a encontrar clásicos compartidos que cruzan fronteras, llenos de texturas como nuestro Hummus cremoso, el auténtico Shawarma de cordero en pan laffa casero, el Lehmeyún horneado en casa o las originales albóndigas de cordero y arándanos en salsa de higos. Mantenemos nuestra carta siempre actualizada en una página externa para que puedas descubrir las creaciones más frescas de la temporada.'
     ]
   },
   about: {
     eyebrow: 'Sobre nosotros',
-    heading: 'Auténtica cocina de Medio Oriente y horno de leña en Palermo',
+    heading: 'Auténtica cocina de Jerusalén y horno de leña en Palermo',
     paragraphs: [
-      'Jamsa es una cantina ubicada en Palermo, Ciudad de Buenos Aires, nacida para rendir homenaje a los sabores, aromas y culturas de Medio Oriente. Nuestra cocina se basa en el respeto por los ingredientes y la tradición, con un menú donde se destacan los panes artesanales recién salidos del horno de leña, mezclas de especias únicas, vegetales de estación y carnes braseadas de cocción lenta.',
-      'El restaurante está pensado para quienes buscan una comida auténtica, relajada y confortable, lejos de la formalidad de un menú de pasos. Vecinos del barrio, viajeros y amantes de la buena gastronomía se encuentran acá para compartir platos en el centro de la mesa, disfrutar de un buen vino y recibir un servicio atento y cercano.',
-      "Nuestros platos emblemáticos incluyen el Hummus cremoso, el auténtico Shawarma de cordero en pan laffa, el Kawarama a la leña y el icónico Malabi con almíbar de rosas. La atmósfera es la de una cantina cálida, vibrante y acogedora; un verdadero viaje a través de los sentidos. Mantenemos nuestra carta siempre actualizada en una página externa para que siempre puedas descubrir las propuestas más frescas de la temporada."
+      'Jamsa es una cantina ubicada en Palermo, Ciudad de Buenos Aires, nacida para rendir homenaje a la riqueza cultural, los aromas y las tradiciones que conviven en las calles de Jerusalén. Nuestra cocina se basa en el respeto por los ingredientes, con un menú donde las mezclas de especias únicas, los vegetales de estación y las carnes braseadas celebran el encuentro de diferentes identidades.',
+      'El restaurante está pensado para quienes buscan una comida auténtica, relajada y hospitalaria, lejos de la formalidad de un menú de pasos. Vecinos del barrio, viajeros y amantes de la buena gastronomía se encuentran acá para compartir clásicos que cruzan fronteras en el centro de la mesa, disfrutar de un buen vino y recibir un servicio atento y cercano.',
+      "Nuestros platos emblemáticos incluyen el Hummus cremoso, el auténtico Shawarma de cordero en pan laffa casero, el Lehmeyún de masa artesanal y las albóndigas de cordero y arándanos en salsa de higos. La atmósfera es la de una cantina cálida, vibrante y acogedora; un verdadero reflejo de la diversidad y la comunidad. Mantenemos nuestra carta siempre actualizada en una página externa para que siempre puedas descubrir las propuestas más frescas de la temporada.",
     ],
     ourHistory: 'Nuestra Historia',
     specialtiesLabel: 'Platos emblemáticos',
@@ -110,7 +111,7 @@ export default {
   },
   gallery: {
     eyebrow: 'Galería',
-    heading: 'Nuestras especialidades árabes y platos para compartir',
+    heading: 'Nuestras especialidades y platos para compartir',
     pageHeading: 'Postales de nuestra cocina y el encuentro alrededor de la mesa'
   },
   location: {
@@ -149,6 +150,10 @@ export default {
         source: 'Google review'
       }
     ]
+  },
+  location: {
+    eyebrow: 'Ubicación y Horarios',
+    heading: 'Vení a probar la experiencia Jamsa en Palermo'
   },
   contact: {
     eyebrow: 'Contacto',

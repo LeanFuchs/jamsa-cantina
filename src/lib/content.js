@@ -1,6 +1,6 @@
 import es from '../locales/es.js';
 
-const website = import.meta.env.PUBLIC_SITE_URL || 'https://jamsa-cantina.pages.dev';
+const website = import.meta.env.PUBLIC_SITE_URL || 'https://jamsacantina.com';
 
 export const siteInfo = {
   website,
