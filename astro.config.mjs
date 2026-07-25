@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
+import cloudflare from "@astrojs/cloudflare";
+
 const siteUrl = process.env.PUBLIC_SITE_URL || 'https://jamsacantina.com';
 
 export default defineConfig({
@@ -11,7 +13,9 @@ export default defineConfig({
       filter: (page) => !page.endsWith('/404/')
     })
   ],
+
   site: siteUrl,
+
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],
@@ -19,4 +23,6 @@ export default defineConfig({
       prefixDefaultLocale: false, 
     },
   },
+
+  adapter: cloudflare()
 });

@@ -26,3 +26,8 @@ Thumbs.db
 # Local tooling caches
 .cache/
 .parcel-cache/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
